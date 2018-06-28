@@ -38,7 +38,7 @@ ember install ember-notifier
 Usage
 ------------------------------------------------------------------------------
 
-See [documentation](http://todo).
+See [documentation](https://scottwernervt.github.io/ember-notifier).
 
 
 Contributing

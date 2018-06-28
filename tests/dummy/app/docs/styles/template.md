@@ -12,7 +12,8 @@ variables before importing `ember-notifier.scss`.
 {{docs-snippet name='style-sass.scss' title='styles/app.scss' language='css'}}
 
 This approach is powerful enough to build entire themes on top of it. 
-You can find the entire list of available variables in <a href="TODO">ember-notifier.scss</a>. 
+You can find the entire list of available variables in 
+[ember-notifier.scss](https://github.com/scottwernervt/ember-notifier/blob/master/app/styles/ember-notifier.scss). 
 
 ## Frameworks
 
@@ -58,4 +59,4 @@ Documentation on <a href="https://foundation.zurb.com/sites/docs/callout.html">Z
 
 ### Other
 
-Do not see your framework here? Make a request <a href="TODO">here</a>.
+Do not see your framework here? Make a request [here](https://github.com/scottwernervt/ember-notifier/issues).
