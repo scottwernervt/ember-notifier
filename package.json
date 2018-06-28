@@ -45,8 +45,6 @@
     "ember-get-config": "^0.2.4"
   },
   "devDependencies": {
-    "@fortawesome/ember-fontawesome": "0.1.0",
-    "@fortawesome/free-solid-svg-icons": "5.1.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.1.4",
