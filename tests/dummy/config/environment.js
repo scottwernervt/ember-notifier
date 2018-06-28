@@ -17,6 +17,66 @@ module.exports = function(environment) {
       }
     },
 
+    emberNotifier: {
+      'position': 'is-top',
+      //
+      // addon
+      //
+      // 'primaryClass': 'is-primary',
+      // 'infoClass': 'is-info',
+      // 'successClass': 'is-success',
+      // 'warningClass': 'is-warning',
+      // 'dangerClass': 'is-danger',
+      // 'secondaryClass': 'is-secondary',
+      //
+      // bulma
+      //
+      // 'secondaryClass': 'is-link',
+      //
+      // spectre
+      //
+      // 'primaryClass': 'toast-primary',
+      // 'infoClass': '',
+      // 'successClass': 'toast-success',
+      // 'warningClass': 'toast-warning',
+      // 'dangerClass': 'toast-error',
+      //
+      // zurb foundation
+      //
+      // 'primaryClass': 'primary',
+      // 'successClass': 'success',
+      // 'warningClass': 'warning',
+      // 'dangerClass': 'alert',
+      // 'secondaryClass': 'secondary',
+      //
+      // bootstrap
+      //
+      // 'primaryClass': 'alert-primary',
+      // 'infoClass': 'alert-info',
+      // 'successClass': 'alert-success',
+      // 'warningClass': 'alert-warning',
+      // 'dangerClass': 'alert-danger',
+      // 'secondaryClass': 'alert-secondary',
+      //
+      // font awesome web font
+      //
+      // 'primaryIcon': 'fas fa-comment',
+      // 'infoIcon': 'fas fa-info',
+      // 'successIcon': 'fas fa-check',
+      // 'warningIcon': 'fas fa-exclamation',
+      // 'dangerIcon': 'fas fa-fire',
+      // 'secondaryIcon': 'fas fa-bell',
+      //
+      // font awesome svg icon
+      //
+      // 'primaryIcon': 'bell',
+      // 'infoIcon': 'info',
+      // 'successIcon': 'check',
+      // 'warningIcon': 'exclamation',
+      // 'dangerIcon': 'fire',
+      // 'secondaryIcon': 'comment',
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -44,6 +104,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    // Allow ember-cli-addon-docs to update the rootURL in compiled assets
+    ENV.rootURL = 'ADDON_DOCS_ROOT_URL';
     // here you can enable a production-specific feature
   }
 

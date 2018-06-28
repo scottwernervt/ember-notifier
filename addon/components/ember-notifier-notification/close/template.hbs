@@ -1,0 +1,11 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <button
+    class="ember-notifier-close-button"
+    type="button"
+    aria-label="Dismiss alert"
+    title="Dismiss this notification" {{action close}}>
+    &times;
+  </button>
+{{/if}}

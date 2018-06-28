@@ -1,0 +1,16 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{component
+    iconComponent
+    icon=notification.icon}}
+  {{component
+    messageComponent
+    title=notification.title
+    message=notification.message
+    messageComponent=notification.messageComponent
+    setOption=(action "setOption")}}
+  {{component
+    closeComponent
+    close=close}}
+{{/if}}

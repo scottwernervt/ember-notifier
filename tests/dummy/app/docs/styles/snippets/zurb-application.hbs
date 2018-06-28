@@ -1,0 +1,20 @@
+{{! BEGIN-SNIPPET zurb-application.hbs }}
+{{#ember-notifier notificationClass="callout" as |notification close|}}
+  <h5>{{notification.title}}</h5>
+  <p>
+    {{#if notification.messageComponent}}
+      {{component
+        notification.messageComponent
+        title=notification.title
+        message=notification.message
+        setOption=(action "setOption")}}
+    {{else}}
+      {{notification.message}}
+    {{/if}}
+  </p>
+  <button class="close-button" aria-label="Dismiss alert" type="button" {{action close}}>
+    <span aria-hidden="true">&times;</span>
+  </button>
+{{/ember-notifier}}
+{{outlet}}
+{{! END-SNIPPET }}

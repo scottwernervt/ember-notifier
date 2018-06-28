@@ -1,0 +1,21 @@
+{{#each notifications as |notification|}}
+  {{#if hasBlock}}
+    {{#ember-notifier-notification
+      class=(readonly notificationClass)
+      notification=notification
+      close=(action "remove" notification)
+      iconComponent=(readonly iconComponent)
+      messageComponent=(readonly messageComponent)
+      closeComponent=(readonly closeComponent)}}
+      {{yield notification (action "remove" notification)}}
+    {{/ember-notifier-notification}}
+  {{else}}
+    {{ember-notifier-notification
+      class=(readonly notificationClass)
+      notification=notification
+      close=(action "remove" notification)
+      iconComponent=(readonly iconComponent)
+      messageComponent=(readonly messageComponent)
+      closeComponent=(readonly closeComponent)}}
+  {{/if}}
+{{/each}}

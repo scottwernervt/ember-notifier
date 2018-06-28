@@ -1,50 +1,83 @@
 {
-  "name": "ember-callout",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "name": "ember-notifier",
+  "version": "0.0.1",
+  "description": "Easy, beautiful notifications for your Ember project.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember",
+    "ember-cli",
+    "notification",
+    "notify",
+    "flash",
+    "callout",
+    "growl",
+    "toast"
   ],
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Scott Werner",
+    "email": "scott.werner.vt@gmail.com",
+    "url": "https://github.com/scottwernervt"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "homepage": "https://github.com/scottwernervt/ember-notifier",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottwernervt/ember-notifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scottwernervt/ember-notifier/issues",
+    "email": "scott.werner.vt@gmail.com"
+  },
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
     "start": "ember serve",
-    "test": "ember try:each"
+    "test": "ember try:each",
+    "reset": "ember try:reset"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.6.0"
+    "ember-cli-babel": "^6.6.0",
+    "ember-cli-htmlbars": "^2.0.1",
+    "ember-get-config": "^0.2.4"
   },
   "devDependencies": {
+    "@fortawesome/ember-fontawesome": "0.1.0",
+    "@fortawesome/free-solid-svg-icons": "5.1.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-cli": "~3.0.0",
+    "ember-cli": "~3.1.4",
+    "ember-cli-addon-docs": "0.5.0",
+    "ember-cli-addon-docs-yuidoc": "^0.2.1",
     "ember-cli-dependency-checker": "^2.0.0",
+    "ember-cli-deploy": "^1.0.2",
+    "ember-cli-deploy-build": "^1.1.1",
+    "ember-cli-deploy-git": "^1.3.3",
+    "ember-cli-deploy-git-ci": "^1.0.1",
     "ember-cli-eslint": "^4.2.1",
-    "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^4.1.1",
+    "ember-cli-sass": "^7.1.7",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
+    "ember-concurrency": "^0.8.19",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-resolver": "^4.0.0",
-    "ember-source": "~3.0.0",
+    "ember-resolver": "4.5.6",
+    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/f363cecd8b325644f8238ff6ffd58562d65c2b38.tgz",
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^0.2.23",
     "eslint-plugin-ember": "^5.0.0",
-    "eslint-plugin-node": "^5.2.1",
-    "loader.js": "^4.2.3"
+    "eslint-plugin-node": "6.0.1",
+    "loader.js": "^4.2.3",
+    "qunit-dom": "^0.6.3"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"

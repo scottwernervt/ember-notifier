@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-callout'
+  name: 'ember-notifier'
 };

@@ -1,0 +1,208 @@
+// References: https://github.com/finnp/dom-notifications
+$ember-notifier-z-index: 999999 !default;
+$ember-notifier-padding: 1rem;
+
+$ember-notifier-notification-default-color: #ffffff !default;
+$ember-notifier-notification-default-background-color: #ffffff !default;
+$ember-notifier-notification-primary-background-color: #00d1b2 !default;
+$ember-notifier-notification-info-background-color: #3ea2ff !default;
+$ember-notifier-notification-success-background-color: #64ce83 !default;
+$ember-notifier-notification-warning-background-color: #ff7f48 !default;
+$ember-notifier-notification-danger-background-color: #e74c3c !default;
+$ember-notifier-notification-secondary-background-color: #dbdbdb !default;
+$ember-notifier-notification-width: 100% !default;
+$ember-notifier-notification-max-width: 420px !default;
+$ember-notifier-notification-max-height: 640px !default;
+$ember-notifier-notification-border-radius: 4px !default;
+$ember-notifier-notification-margin: 0.25rem 0 !default;
+
+$ember-notifier-icon-color: rgba(255, 255, 255, .74) !default;
+$ember-notifier-icon-width: 30px !default;
+$ember-notifier-icon-primary-background-color: darken($ember-notifier-notification-primary-background-color, 8%) !default;
+$ember-notifier-icon-info-background-color: darken($ember-notifier-notification-info-background-color, 8%) !default;
+$ember-notifier-icon-success-background-color: darken($ember-notifier-notification-success-background-color, 8%) !default;
+$ember-notifier-icon-warning-background-color: darken($ember-notifier-notification-warning-background-color, 8%) !default;
+$ember-notifier-icon-danger-background-color: darken($ember-notifier-notification-danger-background-color, 8%) !default;
+$ember-notifier-icon-secondary-background-color: darken($ember-notifier-notification-secondary-background-color, 8%) !default;
+
+$ember-notifier-message-padding: 5px 10px !default;
+//$ember-notifier-message-content-color: $ember-notifier-notification-default-color !default;
+//
+//$ember-notifier-message-content: 1rem !default;
+//
+//$ember-notifier-title-font-size: $ember-notifier-message-font-size !default;
+//$ember-notifier-title-weight: bold !default;
+//$ember-notifier-title-color: $ember-notifier-notification-default-color !default;
+
+$ember-notifier-close-color: $ember-notifier-icon-color !default;
+$ember-notifier-close-opacity: 0.8 !default;
+$ember-notifier-close-hover-opacity: 1 !default;
+$ember-notifier-close-size: 25px !default;
+$ember-notifier-close-top: 5px !default;
+$ember-notifier-close-right: 5px !default;
+
+.ember-notifier {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  padding: $ember-notifier-padding;
+  z-index: $ember-notifier-z-index;
+  width: $ember-notifier-notification-width;
+  max-width: $ember-notifier-notification-max-width;
+  overflow: hidden;
+  pointer-events: none;
+
+  // positions
+  &.is-top {
+    left: 0;
+    right: 0;
+  }
+  &.is-top-left {
+    left: 0;
+    right: auto;
+  }
+  &.is-top-right {
+    left: auto;
+    right: 0;
+  }
+  &.is-bottom {
+    left: 0;
+    right: 0;
+    flex-direction: column-reverse;
+  }
+  &.is-bottom-left {
+    left: 0;
+    right: auto;
+    flex-direction: column-reverse;
+  }
+  &.is-bottom-right {
+    left: auto;
+    right: 0;
+    flex-direction: column-reverse;
+  }
+}
+
+.ember-notifier-notification-base {
+  position: relative;
+  margin: $ember-notifier-notification-margin;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.ember-notifier-notification {
+  display: block;
+  max-height: $ember-notifier-notification-max-height;
+  color: $ember-notifier-notification-default-color;
+  background-color: $ember-notifier-notification-default-background-color;
+  border-radius: $ember-notifier-notification-border-radius;
+
+  // colors
+  &.is-primary {
+    background-color: $ember-notifier-notification-primary-background-color;
+
+    .ember-notifier-icon {
+      background-color: $ember-notifier-icon-primary-background-color;
+    }
+  }
+  &.is-info {
+    background-color: $ember-notifier-notification-info-background-color;
+
+    .ember-notifier-icon {
+      background-color: $ember-notifier-icon-info-background-color;
+    }
+  }
+  &.is-success {
+    background-color: $ember-notifier-notification-success-background-color;
+
+    .ember-notifier-icon {
+      background-color: $ember-notifier-icon-success-background-color;
+    }
+  }
+  &.is-warning {
+    background-color: $ember-notifier-notification-warning-background-color;
+
+    .ember-notifier-icon {
+      background-color: $ember-notifier-icon-warning-background-color;
+    }
+  }
+  &.is-danger {
+    background-color: $ember-notifier-notification-danger-background-color;
+
+    .ember-notifier-icon {
+      background-color: $ember-notifier-icon-danger-background-color;
+    }
+  }
+  &.is-secondary {
+    background-color: $ember-notifier-notification-secondary-background-color;
+
+    .ember-notifier-icon {
+      background-color: $ember-notifier-icon-secondary-background-color;
+    }
+  }
+}
+
+.ember-notifier-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: $ember-notifier-icon-width;
+  color: rgba(255, 255, 255, .74);
+  text-align: center;
+
+  span {
+    position: relative;
+    top: 5px;
+  }
+}
+
+.ember-notifier-message {
+  margin-left: $ember-notifier-icon-width;
+  margin-right: $ember-notifier-close-size;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  padding: $ember-notifier-message-padding;
+}
+
+// TODO
+.ember-notifier-message-title {
+  //color: $ember-notifier-title-color;
+  //font-size: $ember-notifier-title-font-size;
+  //font-weight: $ember-notifier-title-weight;
+}
+
+// TODO
+.ember-notifier-message-content {
+
+}
+
+.ember-notifier-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: $ember-notifier-icon-width;
+  text-align: center;
+}
+
+.ember-notifier-close-button {
+  width: 100%;
+  position: relative;
+  top: 2px;
+  color: $ember-notifier-close-color;
+  opacity: $ember-notifier-close-opacity;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.5rem;
+
+  &:hover,
+  &:focus {
+    opacity: $ember-notifier-close-hover-opacity;
+  }
+}

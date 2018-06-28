@@ -1,0 +1,9 @@
+//! BEGIN-SNIPPET style-sass.scss
+$ember-notifier-z-index: 999999;
+$ember-notifier-notification-primary-background-color: #563D7C;
+$ember-notifier-icon-primary-background-color: #433061;
+$ember-notifier-icon-width: 30px;
+$ember-notifier-close-size: 30px;
+
+@import 'ember-notifier';
+//! END-SNIPPET

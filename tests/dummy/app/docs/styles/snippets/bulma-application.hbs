@@ -1,0 +1,15 @@
+{{! BEGIN-SNIPPET bulma-application.hbs }}
+{{#ember-notifier notificationClass='notification' as |notification close|}}
+  <button class="delete" {{action close}}></button>
+  {{#if notification.messageComponent}}
+    {{component
+      notification.messageComponent
+      title=notification.title
+      message=notification.message
+      setOption=(action "setOption")}}
+  {{else}}
+    {{notification.message}}
+  {{/if}}
+{{/ember-notifier}}
+{{outlet}}
+{{! END-SNIPPET }}

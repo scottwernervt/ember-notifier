@@ -1,0 +1,14 @@
+{{#if messageComponent}}
+  {{component
+    messageComponent
+    title=title
+    message=message
+    setOption=setOption}}
+{{else}}
+  <p class="ember-notifier-message-title">
+    {{title}}
+  </p>
+  <p class="ember-notifier-message-content">
+    {{message}}
+  </p>
+{{/if}}
