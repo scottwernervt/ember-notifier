@@ -28,7 +28,7 @@ global config options to the framework's notification classes and using
   {{demo.snippet 'bulma-application.hbs' label='application.hbs'}}
 {{/docs-demo}}
 
-Documentation on <a href="https://bulma.io/documentation/elements/notification/">Bulma Notifications</a>.
+Documentation on [Bulma Notifications](https://bulma.io/documentation/elements/notification/).
 
 ### Spectre
 
@@ -37,7 +37,7 @@ Documentation on <a href="https://bulma.io/documentation/elements/notification/"
   {{demo.snippet 'spectre-application.hbs' label='application.hbs'}}
 {{/docs-demo}}
 
-Documentation on <a href="https://picturepan2.github.io/spectre/components.html#toasts">Spectre Toasts</a>.
+Documentation on [Spectre Toasts](https://picturepan2.github.io/spectre/components.html#toasts).
 
 ### Bootstrap
 
@@ -46,7 +46,7 @@ Documentation on <a href="https://picturepan2.github.io/spectre/components.html#
   {{demo.snippet 'bootstrap-application.hbs' label='application.hbs'}}
 {{/docs-demo}}
 
-Documentation on <a href="https://getbootstrap.com/docs/4.1/components/alerts/">Bootstrap Alerts</a>.
+Documentation on [Bootstrap Alerts](https://getbootstrap.com/docs/4.1/components/alerts/).
 
 ### Zurb Foundation 
 
@@ -55,7 +55,7 @@ Documentation on <a href="https://getbootstrap.com/docs/4.1/components/alerts/">
   {{demo.snippet 'zurb-application.hbs' label='application.hbs'}}
 {{/docs-demo}}
 
-Documentation on <a href="https://foundation.zurb.com/sites/docs/callout.html">Zurb Foundation Callouts</a>.
+Documentation on [Zurb Foundation Callouts](https://foundation.zurb.com/sites/docs/callout.html).
 
 ### Other
 

@@ -7,7 +7,7 @@ For SVG icons, it is recommended to create a custom icon component.
 ## Web Font
 
 {{#tailwind-alert isInfo=true}}
-  Example using <a href="https://fontawesome.com/get-started/web-fonts-with-css">Font Awesome 5 Web Fonts with CSS</a>.
+  Example using [Font Awesome 5 Web Fonts with CSS](https://fontawesome.com/get-started/web-fonts-with-css).
 {{/tailwind-alert}}
 
 Define each global config option icon class.
@@ -17,7 +17,7 @@ Define each global config option icon class.
 ## SVG
 
 {{#tailwind-alert isInfo=true}}
-  Example using <a href="https://github.com/FortAwesome/ember-fontawesome">ember-fontawesome</a>.
+  Example using [ember-fontawesome](https://github.com/FortAwesome/ember-fontawesome).
 {{/tailwind-alert}}
 
 Create an icon component.

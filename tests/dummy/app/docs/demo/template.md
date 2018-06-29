@@ -4,5 +4,6 @@
 
 {{#tailwind-alert isInfo=true}}
   <p class="font-bold">Notification Icons</p>
-  <p>The demo is using <a href="https://fontawesome.com">Font Awesome 5</a> for demonstration purposes.</p>
+  
+  <p>The demo is using [Font Awesome 5](https://fontawesome.com) for demonstration purposes.</p>
 {{/tailwind-alert}}

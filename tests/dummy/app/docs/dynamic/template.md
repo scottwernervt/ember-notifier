@@ -7,7 +7,7 @@ The notification's message can be dynamic by passing a component to the
   this.get('notifier').info(null, { messageComponent: 'my-component' });
 {{/docs-snippet}}
 
-We are going to create a background task using <a href="http://ember-concurrency.com/">ember-concurrency</a>.
+We are going to create a background task using [ember-concurrency](http://ember-concurrency.com/).
 Based on the task result, the notification will be updated using the 
 message component closure action `setOption`. If 
 the task fails, it will be toggled to `is-danger` and if 
