@@ -48,8 +48,6 @@ $ember-notifier-close-right: 5px !default;
   justify-content: flex-start;
   flex-direction: column;
   position: fixed;
-  top: 0;
-  bottom: 0;
   margin: 0 auto;
   padding: $ember-notifier-padding;
   z-index: $ember-notifier-z-index;
@@ -60,28 +58,34 @@ $ember-notifier-close-right: 5px !default;
 
   // positions
   &.is-top {
+    top: 0;
     left: 0;
     right: 0;
   }
   &.is-top-left {
+    top: 0;
     left: 0;
     right: auto;
   }
   &.is-top-right {
+    top: 0;
     left: auto;
     right: 0;
   }
   &.is-bottom {
+    bottom: 0;
     left: 0;
     right: 0;
     flex-direction: column-reverse;
   }
   &.is-bottom-left {
+    bottom: 0;
     left: 0;
     right: auto;
     flex-direction: column-reverse;
   }
   &.is-bottom-right {
+    bottom: 0;
     left: auto;
     right: 0;
     flex-direction: column-reverse;
