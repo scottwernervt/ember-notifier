@@ -15,10 +15,10 @@ module('Integration | Component | ember-notifier-notification/message', function
 
     await render(hbs`{{ember-notifier-notification/message message=message title=title}}`);
 
-    assert.dom('.ember-notifier-message-title').exists();
-    assert.dom('.ember-notifier-message-title').hasText(this.get('title'));
-    assert.dom('.ember-notifier-message-content').exists();
-    assert.dom('.ember-notifier-message-content').hasText(this.get('message'));
+    assert.dom('.ember-notifier-title').exists();
+    assert.dom('.ember-notifier-title').hasText(this.get('title'));
+    assert.dom('.ember-notifier-content').exists();
+    assert.dom('.ember-notifier-content').hasText(this.get('message'));
   });
 
   test('it renders a custom message component', async function(assert) {

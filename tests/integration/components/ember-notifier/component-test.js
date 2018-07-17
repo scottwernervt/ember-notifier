@@ -37,8 +37,8 @@ module('Integration | Component | ember-notifier', function (hooks) {
 
     assert.dom('.ember-notifier-notification').exists();
     assert.dom('.ember-notifier-notification-base').exists();
-    assert.dom('.ember-notifier-message-title').hasText('header');
-    assert.dom('.ember-notifier-message-content').hasText('msg');
+    assert.dom('.ember-notifier-title').hasText('header');
+    assert.dom('.ember-notifier-content').hasText('msg');
   });
 
   test('it renders a notification with custom class', async function (assert) {
