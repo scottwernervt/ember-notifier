@@ -145,7 +145,7 @@ export default Service.extend({
    * with a value of "0".
    * @param {string} [options.title] Optional title.
    * @param {string} [options.message] Optional message.
-   * @param {string} [options.contentComponent] Optional message component name.
+   * @param {string} [options.contentComponent] Optional content component name.
    * @param {string} [options.icon] Optional Icon name or class name.
    * @param {function} [options.onRemove] Callback function when notification is removed.
    */

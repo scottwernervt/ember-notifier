@@ -75,7 +75,7 @@ export default Component.extend({
   iconComponent: defaultValue('ember-notifier-notification/icon'),
 
   /**
-   * The message component to render.
+   * The content component to render.
    *
    * Defaults to `ember-notifier-notification/content`.
    *

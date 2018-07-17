@@ -65,7 +65,7 @@ export default Component.extend({
   iconComponent: undefined,
 
   /**
-   * The default message component.
+   * The default content component.
    *
    * @argument contentComponent
    * @type [string]

@@ -45,7 +45,7 @@ export default Component.extend({
   message: null,
 
   /**
-   * Message component.
+   * Content component.
    *
    * @argument contentComponent
    * @type [Component]

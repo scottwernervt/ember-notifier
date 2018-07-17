@@ -9,7 +9,7 @@ The notification's message can be dynamic by passing a component to the
 
 We are going to create a background task using [ember-concurrency](http://ember-concurrency.com/).
 Based on the task result, the notification will be updated using the 
-message component closure action `setOption`. If 
+content component closure action `setOption`. If 
 the task fails, it will be toggled to `is-danger` and if 
 successful, `is-success`.
 
@@ -19,7 +19,7 @@ Install `ember-concurrency`.
   ember install ember-concurrency
 {{/docs-snippet}}
 
-Generate the dynamic message component.
+Generate the dynamic content component.
 
 {{#docs-snippet name="ember-generate-notification-icon"}}
   ember g component task-message
