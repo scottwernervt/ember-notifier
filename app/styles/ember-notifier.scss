@@ -1,6 +1,6 @@
-// References: https://github.com/finnp/dom-notifications
+// Reference: https://github.com/finnp/dom-notifications
 $ember-notifier-z-index: 999999 !default;
-$ember-notifier-padding: 1rem;
+$ember-notifier-padding: 1rem !default;
 
 $ember-notifier-notification-default-color: #ffffff !default;
 $ember-notifier-notification-default-background-color: #ffffff !default;
@@ -26,13 +26,14 @@ $ember-notifier-icon-danger-background-color: darken($ember-notifier-notificatio
 $ember-notifier-icon-secondary-background-color: darken($ember-notifier-notification-secondary-background-color, 8%) !default;
 
 $ember-notifier-message-padding: 5px 10px !default;
-//$ember-notifier-message-content-color: $ember-notifier-notification-default-color !default;
-//
-//$ember-notifier-message-content: 1rem !default;
-//
-//$ember-notifier-title-font-size: $ember-notifier-message-font-size !default;
-//$ember-notifier-title-weight: bold !default;
-//$ember-notifier-title-color: $ember-notifier-notification-default-color !default;
+
+$ember-notifier-title-margin: 0 !default;
+$ember-notifier-title-font-size: 1.5rem !default;
+$ember-notifier-title-font-weight: none !default;
+
+$ember-notifier-content-margin: 0 !default;
+$ember-notifier-content-font-size: 1.5rem !default;
+$ember-notifier-content-font-weight: none !default;
 
 $ember-notifier-close-color: $ember-notifier-icon-color !default;
 $ember-notifier-close-opacity: 0.8 !default;
@@ -169,16 +170,17 @@ $ember-notifier-close-right: 5px !default;
   padding: $ember-notifier-message-padding;
 }
 
-// TODO
-.ember-notifier-message-title {
-  //color: $ember-notifier-title-color;
-  //font-size: $ember-notifier-title-font-size;
-  //font-weight: $ember-notifier-title-weight;
+
+.ember-notifier-title {
+  margin: $ember-notifier-title-margin;
+  font-size: $ember-notifier-title-font-size;
+  font-weight: $ember-notifier-title-font-weight;
 }
 
-// TODO
-.ember-notifier-message-content {
-
+.ember-notifier-content {
+  margin: $ember-notifier-content-margin;
+  font-size: $ember-notifier-content-font-size;
+  font-weight: $ember-notifier-content-font-weight;
 }
 
 .ember-notifier-close {
@@ -202,6 +204,7 @@ $ember-notifier-close-right: 5px !default;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  cursor: pointer;
 
   &:hover,
   &:focus {
