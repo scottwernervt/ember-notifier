@@ -1,6 +1,6 @@
 # Dynamic
 
-The notification's message can be dynamic by passing a component to the
+The notification's content can be dynamic by passing a component to the
 `contentComponent` option.
 
 {{#docs-snippet name="message-component-option.js"}}

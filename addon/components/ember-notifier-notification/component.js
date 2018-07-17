@@ -5,7 +5,7 @@ import defaultValue from '../../utils/default-value';
 import layout from './template';
 
 /**
- * Notification wrapper for icon, message, and close button.
+ * Notification wrapper for icon, content, and close button.
  *
  * Inline usage:
  * ```hbs
@@ -20,7 +20,7 @@ import layout from './template';
  *   notification=notification
  *   close=(action "remove" notification)
  *   iconComponent='my-icon-component'
- *   contentComponent='my-close-component'
+ *   contentComponent='my-content-component'
  *   closeComponent='my-close-component'}}
  * ```
  *

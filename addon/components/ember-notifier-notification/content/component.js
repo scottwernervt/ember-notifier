@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import layout from './template';
 
 /**
- * Message render component.
+ * Content component.
  *
  * Inline usage:
  * ```hbs
@@ -29,7 +29,7 @@ export default Component.extend({
   classNames: ['ember-notifier-content'],
 
   /**
-   * Notification title (header).
+   * Notification title/header.
    *
    * @argument title
    * @type [string]
@@ -37,7 +37,7 @@ export default Component.extend({
   title: null,
 
   /**
-   * Notification message
+   * Notification message.
    *
    * @argument message
    * @type [string]
@@ -53,7 +53,7 @@ export default Component.extend({
   contentComponent: null,
 
   /**
-   * Closure action to change a property on the notification object
+   * Closure action to change a property on the notification object.
    *
    * @argument setOption
    * @type ember/action

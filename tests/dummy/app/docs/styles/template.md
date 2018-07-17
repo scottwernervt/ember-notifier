@@ -2,12 +2,12 @@
 
 This addon supports customizing the notification style through SASS or 
 using the `ember-notifier` as a block param to apply a framework's 
-component.
+component classes.
 
 ## SASS
 
-To customize the notification, icon, or close button, set the addon 
-variables before importing `ember-notifier.scss`.
+To customize the notification, set the addon variables before 
+importing `ember-notifier.scss`.
 
 {{docs-snippet name='style-sass.scss' title='styles/app.scss' language='css'}}
 

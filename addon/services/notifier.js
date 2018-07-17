@@ -6,8 +6,18 @@ import Service from '@ember/service';
 import config from 'ember-get-config';
 
 /**
- * The Notifier service is the public API that provides access to displaying and adding or removing
+ * The Notifier service is the public API that provides access to displaying, adding, or removing
  * notifications.
+ *
+ * Usage:
+ * ```js
+ * import Controller from '@ember/controller';
+ * import { inject as service } from '@ember/service';
+ *
+ * export default Controller.extend({
+ *  notifier: service(),
+ * });
+ * ```
  *
  * @class NotifierService
  * @public
@@ -146,7 +156,7 @@ export default Service.extend({
    * @param {string} [options.title] Optional title.
    * @param {string} [options.message] Optional message.
    * @param {string} [options.contentComponent] Optional content component name.
-   * @param {string} [options.icon] Optional Icon name or class name.
+   * @param {string} [options.icon] Optional icon class name or object name.
    * @param {function} [options.onRemove] Callback function when notification is removed.
    */
   add(options = {}) {

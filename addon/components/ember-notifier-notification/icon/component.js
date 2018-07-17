@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import layout from './template';
 
 /**
- * Icon render component.
+ * Icon component.
  *
  * Inline usage:
  * ```hbs
@@ -24,7 +24,7 @@ export default Component.extend({
   classNames: ['ember-notifier-icon'],
 
   /**
-   * Icon class name.
+   * Icon class name or object name.
    *
    * @argument icon
    * @type string
