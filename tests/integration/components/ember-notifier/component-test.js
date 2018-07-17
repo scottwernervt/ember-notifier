@@ -91,7 +91,7 @@ module('Integration | Component | ember-notifier', function (hooks) {
     await render(hbs`
       {{ember-notifier 
         iconComponent="icon-component"
-        messageComponent="message-component"
+        contentComponent="message-component"
         closeComponent="close-component"}}
     `);
 

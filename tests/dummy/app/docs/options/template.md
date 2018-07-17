@@ -16,6 +16,6 @@ The position can be set to: `is-top`, `is-top-left`, `is-top-right`,
 ## Notification
 
 The global options can be overriden per notification. In addition, extra
-options like `onRemove()` and `messageComponent` can be included.
+options like `onRemove()` and `contentComponent` can be included.
 
 {{docs-snippet name="notification-options.js" title="component.js"}}

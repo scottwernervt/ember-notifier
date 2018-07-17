@@ -12,7 +12,7 @@ export default Component.extend({
     launchTask() {
       this.get('notifier').add({
         type: 'is-info',
-        messageComponent: 'task-message',
+        contentComponent: 'task-message',
         duration: 0,
       });
     },

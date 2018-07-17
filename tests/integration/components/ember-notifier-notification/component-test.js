@@ -49,7 +49,7 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
 
     this.set('notification', EmberObject.create({
       type: 'is-primary',
-      messageComponent: 'message-component',
+      contentComponent: 'message-component',
     }));
     this.set('closeAction', () => {});
 

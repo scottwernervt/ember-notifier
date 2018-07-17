@@ -67,10 +67,10 @@ export default Component.extend({
   /**
    * The default message component.
    *
-   * @argument messageComponent
+   * @argument contentComponent
    * @type [string]
    */
-  messageComponent: undefined,
+  contentComponent: undefined,
 
   /**
    * The default close component.

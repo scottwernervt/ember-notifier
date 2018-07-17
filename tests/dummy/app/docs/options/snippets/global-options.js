@@ -17,7 +17,7 @@ module.exports = function(environment) {
       secondaryIcon: 'fas fa-comment',
       // notification components
       iconComponent: 'ember-notifier-notification/icon',
-      messageComponent: 'ember-notifier-notification/message',
+      contentComponent: 'ember-notifier-notification/content',
       closeComponent: 'ember-notifier-notification/close',
       // options
       position: 'is-top',

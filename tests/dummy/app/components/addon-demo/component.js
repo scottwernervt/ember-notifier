@@ -12,7 +12,7 @@ export default Component.extend({
   demo: service(),
 
   message: 'Testing notifications',
-  messageComponent: null,
+  contentComponent: null,
   types: null,
   positions: null,
 
@@ -31,9 +31,9 @@ export default Component.extend({
       const type = this.get('type');
       const message = this.get('message');
       const duration = this.get('duration');
-      const messageComponent = this.get('messageComponent');
+      const contentComponent = this.get('contentComponent');
       const title = `Notification ${type}`; // framework testing
-      const options = { title, duration, messageComponent };
+      const options = { title, duration, contentComponent };
 
       if (type === 'primary') {
         this.get('notifier').primary(message, options);

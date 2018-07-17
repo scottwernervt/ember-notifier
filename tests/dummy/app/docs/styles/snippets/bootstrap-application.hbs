@@ -2,9 +2,9 @@
 {{#ember-notifier notificationClass="alert alert-dismissible" as |notification close|}}
   <h4 class="alert-heading">{{notification.title}}</h4>
   <p>
-    {{#if notification.messageComponent}}
+    {{#if notification.contentComponent}}
       {{component
-        notification.messageComponent
+        notification.contentComponent
         title=notification.title
         message=notification.message
         setOption=(action "setOption")}}

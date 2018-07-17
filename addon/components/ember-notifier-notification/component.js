@@ -20,7 +20,7 @@ import layout from './template';
  *   notification=notification
  *   close=(action "remove" notification)
  *   iconComponent='my-icon-component'
- *   messageComponent='my-close-component'
+ *   contentComponent='my-close-component'
  *   closeComponent='my-close-component'}}
  * ```
  *
@@ -77,12 +77,12 @@ export default Component.extend({
   /**
    * The message component to render.
    *
-   * Defaults to `ember-notifier-notification/message`.
+   * Defaults to `ember-notifier-notification/content`.
    *
-   * @argument messageComponent
+   * @argument contentComponent
    * @type string
    */
-  messageComponent: defaultValue('ember-notifier-notification/message'),
+  contentComponent: defaultValue('ember-notifier-notification/content'),
 
   /**
    * The close component to render.

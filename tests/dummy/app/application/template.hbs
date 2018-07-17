@@ -28,10 +28,10 @@
     {{!--{{#ember-notifier-notification/icon}}--}}
       {{!--{{fa-icon notification.icon}}--}}
     {{!--{{/ember-notifier-notification/icon}}--}}
-    {{!--{{ember-notifier-notification/message--}}
+    {{!--{{ember-notifier-notification/content--}}
       {{!--title=notification.title--}}
       {{!--message=notification.message--}}
-      {{!--messageComponent=notification.messageComponent}}--}}
+      {{!--contentComponent=notification.contentComponent}}--}}
     {{!--{{ember-notifier-notification/close close=close}}--}}
   {{!--{{/ember-notifier}}--}}
     {{!--or--}}
@@ -39,9 +39,9 @@
   {{!--bulma--}}
   {{!--{{#ember-notifier notificationClass='notification' as |notification close|}}--}}
     {{!--<button class="delete" {{action close}}></button>--}}
-    {{!--{{#if notification.messageComponent}}--}}
+    {{!--{{#if notification.contentComponent}}--}}
       {{!--{{component--}}
-        {{!--notification.messageComponent--}}
+        {{!--notification.contentComponent--}}
         {{!--title=notification.title--}}
         {{!--message=notification.message}}--}}
     {{!--{{else}}--}}
@@ -53,9 +53,9 @@
   {{!--{{#ember-notifier notificationClass="toast" as |notification close|}}--}}
     {{!--<button class="btn btn-clear float-right" {{action close}}></button>--}}
     {{!--<h6>{{notification.title}}</h6>--}}
-    {{!--{{#if notification.messageComponent}}--}}
+    {{!--{{#if notification.contentComponent}}--}}
       {{!--{{component--}}
-        {{!--notification.messageComponent--}}
+        {{!--notification.contentComponent--}}
         {{!--title=notification.title--}}
         {{!--message=notification.message}}--}}
     {{!--{{else}}--}}
@@ -67,9 +67,9 @@
   {{!--{{#ember-notifier notificationClass="callout" as |notification close|}}--}}
     {{!--<h5>{{notification.title}}</h5>--}}
     {{!--<p>--}}
-      {{!--{{#if notification.messageComponent}}--}}
+      {{!--{{#if notification.contentComponent}}--}}
         {{!--{{component--}}
-          {{!--notification.messageComponent--}}
+          {{!--notification.contentComponent--}}
           {{!--title=notification.title--}}
           {{!--message=notification.message}}--}}
       {{!--{{else}}--}}
@@ -85,9 +85,9 @@
   {{!--{{#ember-notifier notificationClass="alert alert-dismissible" as |notification close|}}--}}
     {{!--<h4 class="alert-heading">{{notification.title}}</h4>--}}
     {{!--<p>--}}
-      {{!--{{#if notification.messageComponent}}--}}
+      {{!--{{#if notification.contentComponent}}--}}
         {{!--{{component--}}
-          {{!--notification.messageComponent--}}
+          {{!--notification.contentComponent--}}
           {{!--title=notification.title--}}
           {{!--message=notification.message}}--}}
       {{!--{{else}}--}}

@@ -5,7 +5,7 @@
       notification=notification
       close=(action "remove" notification)
       iconComponent=(readonly iconComponent)
-      messageComponent=(readonly messageComponent)
+      contentComponent=(readonly contentComponent)
       closeComponent=(readonly closeComponent)}}
       {{yield notification (action "remove" notification)}}
     {{/ember-notifier-notification}}
@@ -15,7 +15,7 @@
       notification=notification
       close=(action "remove" notification)
       iconComponent=(readonly iconComponent)
-      messageComponent=(readonly messageComponent)
+      contentComponent=(readonly contentComponent)
       closeComponent=(readonly closeComponent)}}
   {{/if}}
 {{/each}}

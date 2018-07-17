@@ -32,7 +32,7 @@ module('service:notifier', 'Unit | Service | notifier', function (hooks) {
       type: 'is-class',
       icon: 'bell',
       duration: 0,
-      messageComponent: 'test-component',
+      contentComponent: 'test-component',
       onRemove() {
         result = true;
       },
@@ -43,7 +43,7 @@ module('service:notifier', 'Unit | Service | notifier', function (hooks) {
     assert.equal(service.get('notifications.0.type'), 'is-class', 'it has the correct type');
     assert.equal(service.get('notifications.0.icon'), 'bell', 'it has the correct icon');
     assert.equal(service.get('notifications.0.duration'), 0, 'it has the correct duration');
-    assert.equal(service.get('notifications.0.messageComponent'), 'test-component', 'it has the correct message component');
+    assert.equal(service.get('notifications.0.contentComponent'), 'test-component', 'it has the correct message component');
 
     service.remove(service.get('notifications.0'));
 

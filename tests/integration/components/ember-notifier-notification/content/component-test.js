@@ -4,7 +4,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | ember-notifier-notification/message', function(hooks) {
+module('Integration | Component | ember-notifier-notification/content', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
@@ -13,7 +13,7 @@ module('Integration | Component | ember-notifier-notification/message', function
     this.set('message', 'msg');
     this.set('title', 'header');
 
-    await render(hbs`{{ember-notifier-notification/message message=message title=title}}`);
+    await render(hbs`{{ember-notifier-notification/content message=message title=title}}`);
 
     assert.dom('.ember-notifier-title').exists();
     assert.dom('.ember-notifier-title').hasText(this.get('title'));
@@ -21,17 +21,17 @@ module('Integration | Component | ember-notifier-notification/message', function
     assert.dom('.ember-notifier-content').hasText(this.get('message'));
   });
 
-  test('it renders a custom message component', async function(assert) {
+  test('it renders a custom content component', async function(assert) {
     assert.expect(4);
 
     this.set('message', 'msg');
     this.set('title', 'header');
 
-    this.owner.register('component:message-component', Component.extend({
+    this.owner.register('component:content-component', Component.extend({
       layout: hbs`<header>{{title}}</header><p>{{message}}</p>`,
     }));
 
-    await render(hbs`{{ember-notifier-notification/message messageComponent="message-component" message=message title=title}}`);
+    await render(hbs`{{ember-notifier-notification/content contentComponent="content-component" message=message title=title}}`);
 
     assert.dom('header').exists();
     assert.dom('header').hasText(this.get('title'));

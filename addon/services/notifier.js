@@ -145,13 +145,13 @@ export default Service.extend({
    * with a value of "0".
    * @param {string} [options.title] Optional title.
    * @param {string} [options.message] Optional message.
-   * @param {string} [options.messageComponent] Optional message component name.
+   * @param {string} [options.contentComponent] Optional message component name.
    * @param {string} [options.icon] Optional Icon name or class name.
    * @param {function} [options.onRemove] Callback function when notification is removed.
    */
   add(options = {}) {
-    if (!options.message && !options.messageComponent) {
-      throw new Error('No message or messageComponent set.');
+    if (!options.message && !options.contentComponent) {
+      throw new Error('No message or contentComponent set.');
     }
 
     const defaultOptions = EmberObject.create({

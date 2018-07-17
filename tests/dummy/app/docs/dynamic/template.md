@@ -1,10 +1,10 @@
 # Dynamic
 
 The notification's message can be dynamic by passing a component to the
-`messageComponent` option.
+`contentComponent` option.
 
 {{#docs-snippet name="message-component-option.js"}}
-  this.get('notifier').info(null, { messageComponent: 'my-component' });
+  this.get('notifier').info(null, { contentComponent: 'my-component' });
 {{/docs-snippet}}
 
 We are going to create a background task using [ember-concurrency](http://ember-concurrency.com/).

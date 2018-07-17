@@ -2,9 +2,9 @@
 {{#ember-notifier notificationClass="toast" as |notification close|}}
   <button class="btn btn-clear float-right" {{action close}}></button>
   <h6>{{notification.title}}</h6>
-  {{#if notification.messageComponent}}
+  {{#if notification.contentComponent}}
     {{component
-      notification.messageComponent
+      notification.contentComponent
       title=notification.title
       message=notification.message
       setOption=(action "setOption")}}

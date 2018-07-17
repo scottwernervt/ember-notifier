@@ -6,16 +6,16 @@ import layout from './template';
  *
  * Inline usage:
  * ```hbs
- * {{ember-notifier-notification/message
+ * {{ember-notifier-notification/content
  *   title=notification.title
  *   message=notification.message}}
  * ```
  *
- * If `messageComponent` is passed as an argument, the component is rendered with the following
+ * If `contentComponent` is passed as an argument, the component is rendered with the following
  * arguments:
  * ```hbs
  * {{component
- *   messageComponent
+ *   contentComponent
  *   title=title
  *   message=message
  *   setOption=setOption}}
@@ -26,7 +26,7 @@ import layout from './template';
 export default Component.extend({
   layout,
 
-  classNames: ['ember-notifier-message'],
+  classNames: ['ember-notifier-content'],
 
   /**
    * Notification title (header).
@@ -47,10 +47,10 @@ export default Component.extend({
   /**
    * Message component.
    *
-   * @argument messageComponent
+   * @argument contentComponent
    * @type [Component]
    */
-  messageComponent: null,
+  contentComponent: null,
 
   /**
    * Closure action to change a property on the notification object
