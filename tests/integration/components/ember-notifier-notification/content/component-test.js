@@ -8,17 +8,18 @@ module('Integration | Component | ember-notifier-notification/content', function
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    assert.expect(4);
+    assert.expect(5);
 
     this.set('message', 'msg');
     this.set('title', 'header');
 
     await render(hbs`{{ember-notifier-notification/content message=message title=title}}`);
 
+    assert.dom('.ember-notifier-content').exists();
     assert.dom('.ember-notifier-title').exists();
     assert.dom('.ember-notifier-title').hasText(this.get('title'));
-    assert.dom('.ember-notifier-content').exists();
-    assert.dom('.ember-notifier-content').hasText(this.get('message'));
+    assert.dom('.ember-notifier-message').exists();
+    assert.dom('.ember-notifier-message').hasText(this.get('message'));
   });
 
   test('it renders a custom content component', async function(assert) {

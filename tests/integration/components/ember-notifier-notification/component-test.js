@@ -23,11 +23,11 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
     assert.dom('.ember-notifier-notification-base').exists();
     assert.dom('.ember-notifier-notification-base').hasClass('is-primary');
     assert.dom('.ember-notifier-icon').exists();
-    assert.dom('.ember-notifier-message').exists();
+    assert.dom('.ember-notifier-content').exists();
     assert.dom('.ember-notifier-title').exists();
     assert.dom('.ember-notifier-title').hasText('header');
-    assert.dom('.ember-notifier-content').exists();
-    assert.dom('.ember-notifier-content').hasText('msg');
+    assert.dom('.ember-notifier-message').exists();
+    assert.dom('.ember-notifier-message').hasText('msg');
     assert.dom('.ember-notifier-close').exists();
 
     await render(hbs`

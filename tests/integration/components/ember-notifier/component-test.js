@@ -28,7 +28,7 @@ module('Integration | Component | ember-notifier', function (hooks) {
   });
 
   test('it renders a notification', async function (assert) {
-    assert.expect(4);
+    assert.expect(5);
 
     const service = this.owner.lookup('service:notifier');
     service.add({ title: 'header', message: 'msg', duration: 0 });
@@ -37,8 +37,9 @@ module('Integration | Component | ember-notifier', function (hooks) {
 
     assert.dom('.ember-notifier-notification').exists();
     assert.dom('.ember-notifier-notification-base').exists();
+    assert.dom('.ember-notifier-content').exists();
     assert.dom('.ember-notifier-title').hasText('header');
-    assert.dom('.ember-notifier-content').hasText('msg');
+    assert.dom('.ember-notifier-message').hasText('msg');
   });
 
   test('it renders a notification with custom class', async function (assert) {
