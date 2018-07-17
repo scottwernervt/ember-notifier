@@ -25,15 +25,15 @@ $ember-notifier-icon-warning-background-color: darken($ember-notifier-notificati
 $ember-notifier-icon-danger-background-color: darken($ember-notifier-notification-danger-background-color, 8%) !default;
 $ember-notifier-icon-secondary-background-color: darken($ember-notifier-notification-secondary-background-color, 8%) !default;
 
-$ember-notifier-message-padding: 5px 10px !default;
+$ember-notifier-content-padding: 5px 10px !default;
 
 $ember-notifier-title-margin: 0 !default;
 $ember-notifier-title-font-size: 1.0rem !default;
 $ember-notifier-title-font-weight: none !default;
 
-$ember-notifier-content-margin: 0 !default;
-$ember-notifier-content-font-size: 1.0rem !default;
-$ember-notifier-content-font-weight: none !default;
+$ember-notifier-message-margin: 0 !default;
+$ember-notifier-message-font-size: 1.0rem !default;
+$ember-notifier-message-font-weight: none !default;
 
 $ember-notifier-close-color: $ember-notifier-icon-color !default;
 $ember-notifier-close-opacity: 0.8 !default;
@@ -166,14 +166,13 @@ $ember-notifier-close-right: 5px !default;
   }
 }
 
-.ember-notifier-message {
+.ember-notifier-content {
   margin-left: $ember-notifier-icon-width;
   margin-right: $ember-notifier-close-size;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-  padding: $ember-notifier-message-padding;
+  padding: $ember-notifier-content-padding;
 }
-
 
 .ember-notifier-title {
   margin: $ember-notifier-title-margin;
@@ -181,10 +180,10 @@ $ember-notifier-close-right: 5px !default;
   font-weight: $ember-notifier-title-font-weight;
 }
 
-.ember-notifier-content {
-  margin: $ember-notifier-content-margin;
-  font-size: $ember-notifier-content-font-size;
-  font-weight: $ember-notifier-content-font-weight;
+.ember-notifier-message {
+  margin: $ember-notifier-message-margin;
+  font-size: $ember-notifier-message-font-size;
+  font-weight: $ember-notifier-message-font-weight;
 }
 
 .ember-notifier-close {
