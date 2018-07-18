@@ -25,28 +25,28 @@ $ember-notifier-icon-danger-background-color: darken($ember-notifier-danger-back
 $ember-notifier-icon-secondary-background-color: darken($ember-notifier-secondary-background-color, 8%) !default;
 
 $ember-notifier-content-padding: 5px 10px !default;
+$ember-notifier-content-margin: 0 30px !default;
 $ember-notifier-title-margin: 0 !default;
 $ember-notifier-message-margin: 0 !default;
 
+$ember-notifier-close-width: $ember-notifier-icon-width !default;
 $ember-notifier-close-color: $ember-notifier-icon-color !default;
 $ember-notifier-close-opacity: 0.8 !default;
 $ember-notifier-close-hover-opacity: 1 !default;
-$ember-notifier-close-size: 25px !default;
-$ember-notifier-close-top: 5px !default;
-$ember-notifier-close-right: 5px !default;
+$ember-notifier-close-button-size: 1.5rem !default;
 
 .ember-notifier {
+  position: fixed;
+  z-index: $ember-notifier-z-index;
   display: flex;
+  overflow: hidden;
   align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
-  position: fixed;
-  margin: 0 auto;
-  padding: $ember-notifier-padding;
-  z-index: $ember-notifier-z-index;
   width: $ember-notifier-width;
   max-width: $ember-notifier-max-width;
-  overflow: hidden;
+  padding: $ember-notifier-padding;
+  margin: 0 auto;
   pointer-events: none;
 
   // positions
@@ -87,17 +87,17 @@ $ember-notifier-close-right: 5px !default;
 
 .ember-notifier-notification-base {
   position: relative;
+  overflow: hidden;
   margin: $ember-notifier-margin;
   pointer-events: auto;
-  overflow: hidden;
 }
 
 .ember-notifier-notification {
   display: block;
   max-height: $ember-notifier-max-height;
+  border-radius: $ember-notifier-border-radius;
   color: $ember-notifier-default-color;
   background-color: $ember-notifier-default-background-color;
-  border-radius: $ember-notifier-border-radius;
 
   // colors
   &.is-primary {
@@ -148,8 +148,8 @@ $ember-notifier-close-right: 5px !default;
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: $ember-notifier-icon-width;
+  height: 100%;
   color: rgba(255, 255, 255, .74);
   text-align: center;
 
@@ -160,11 +160,10 @@ $ember-notifier-close-right: 5px !default;
 }
 
 .ember-notifier-content {
-  margin-left: $ember-notifier-icon-width;
-  margin-right: $ember-notifier-close-size;
+  padding: $ember-notifier-content-padding;
+  margin: $ember-notifier-content-margin;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-  padding: $ember-notifier-content-padding;
 }
 
 .ember-notifier-title {
@@ -179,23 +178,21 @@ $ember-notifier-close-right: 5px !default;
   position: absolute;
   top: 0;
   right: 0;
+  width: $ember-notifier-close-width;
   height: 100%;
-  width: $ember-notifier-icon-width;
-  text-align: center;
 }
 
 .ember-notifier-close-button {
   position: relative;
-  top: 2px;
-  width: 100%;
-  color: $ember-notifier-close-color;-
-  background: inherit;
-  opacity: $ember-notifier-close-opacity;
-  border: none;
-  font-size: 1.5rem;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: $ember-notifier-close-color;
+  opacity: $ember-notifier-close-opacity;
+  font-size: $ember-notifier-close-button-size;
   cursor: pointer;
 
   &:hover,
