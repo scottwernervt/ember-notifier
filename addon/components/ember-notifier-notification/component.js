@@ -5,7 +5,7 @@ import defaultValue from '../../utils/default-value';
 import layout from './template';
 
 /**
- * A notification wrapper for icon, content, and close button.
+ * The notification component which displays the icon, content, and close button.
  *
  * Inline usage:
  * ```hbs

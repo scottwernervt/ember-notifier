@@ -1,7 +1,7 @@
 import { computed } from '@ember/object';
 
 /**
- * Fallback to a default value if property is undefined.
+ * Fallback to a default value if the property is undefined.
  *
  * Source:
  * [github.com/cibernox/ember-power-select](https://github.com/cibernox/ember-power-select/blob/master/addon/utils/computed-fallback-if-undefined.js)

@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import layout from './template';
 
 /**
- * Close button component.
+ * The close button component.
  *
  * Inline usage:
  * ```hbs

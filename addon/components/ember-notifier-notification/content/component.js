@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import layout from './template';
 
 /**
- * Content component.
+ * The content component which displays the title and message.
  *
  * Inline usage:
  * ```hbs
@@ -11,7 +11,7 @@ import layout from './template';
  *   message=notification.message}}
  * ```
  *
- * If `contentComponent` is passed as an argument, the component is rendered with the following
+ * Passing an a component name to `contentComponent` will rendered with the following
  * arguments:
  * ```hbs
  * {{component
@@ -21,7 +21,7 @@ import layout from './template';
  *   setOption=setOption}}
  * ```
  *
- * @class Message
+ * @class Content
  */
 export default Component.extend({
   layout,
