@@ -6,7 +6,7 @@ import Service from '@ember/service';
 import config from 'ember-get-config';
 
 /**
- * The Notifier service is the public API that provides access to displaying, adding, or removing
+ * The notifier service is the public API that provides access to displaying, adding, or removing
  * notifications.
  *
  * Usage:
@@ -56,7 +56,7 @@ export default Service.extend({
   },
 
   /**
-   * Add a primary styled notification.
+   * Adds a primary styled notification.
    *
    * @method primary
    * @param {string} message The notification message.
@@ -71,7 +71,7 @@ export default Service.extend({
   },
 
   /**
-   * Add an info styled notification.
+   * Adds an info styled notification.
    *
    * @method info
    * @param {string} message The notification message.
@@ -86,7 +86,7 @@ export default Service.extend({
   },
 
   /**
-   * Add a success styled notification.
+   * Adds a success styled notification.
    *
    * @method success
    * @param {string} message The notification message.
@@ -101,7 +101,7 @@ export default Service.extend({
   },
 
   /**
-   * Add a warning styled notification.
+   * Adds a warning styled notification.
    *
    * @method warning
    * @param {string} message The notification message.
@@ -116,7 +116,7 @@ export default Service.extend({
   },
 
   /**
-   * Add a danger styled notification.
+   * Adds a danger styled notification.
    *
    * @method danger
    * @param {string} message The notification message.
@@ -131,7 +131,7 @@ export default Service.extend({
   },
 
   /**
-   * Add a secondary styled notification.
+   * Adds a secondary styled notification.
    *
    * @method secondary
    * @param {string} message The notification message.
@@ -146,7 +146,7 @@ export default Service.extend({
   },
 
   /**
-   * Add a custom notification.
+   * Adds a custom notification.
    *
    * @method add
    * @param {Object} options Notification options.
@@ -180,7 +180,7 @@ export default Service.extend({
   },
 
   /**
-   * Remove a notification.
+   * Removes a notification.
    *
    * @method remove
    * @param {Object} notification The notification to remove.
@@ -194,7 +194,7 @@ export default Service.extend({
   },
 
   /**
-   * Remove all notifications.
+   * Removes all notifications.
    *
    * @method empty
    */
@@ -203,7 +203,7 @@ export default Service.extend({
   },
 
   /**
-   * Schedule removal of notification based on duration property.
+   * Schedules removal of a notification based on a duration property.
    *
    * @method scheduleRemoval
    * @param {Object} notification The notification to schedule the removal on.
@@ -216,7 +216,7 @@ export default Service.extend({
   },
 
   /**
-   * Cancel scheduled removal of notification.
+   * Cancels a scheduled removal of a notification.
    *
    * @method cancelRemoval
    * @param {Object} notification The notification to cancel the timer on.

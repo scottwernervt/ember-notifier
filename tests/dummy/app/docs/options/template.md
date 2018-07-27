@@ -1,21 +1,20 @@
 # Options
 
-Notification options can be set globally and overridden at run time 
-when adding a notification.
+Notification options can be set globally and overridden at run time.
 
 ## Global
 
-In `config/environment.js`, you can override the service defaults in the 
-`emberNotifier` object:
+In `config/environment.js`, the service defaults can be overridden using 
+the `emberNotifier` object:
 
 {{docs-snippet name="global-options.js" title="config/environment.js"}}
 
-The position can be set to: `is-top`, `is-top-left`, `is-top-right`, 
-`is-bottom`, `is-bottom-left`, or `is-bottom-right`.
+The notification position can be set to: `is-top`, `is-top-left`, 
+`is-top-right`, `is-bottom`, `is-bottom-left`, or `is-bottom-right`.
 
 ## Notification
 
-The global options can be overriden per notification. In addition, extra
-options like `onRemove()` and `contentComponent` can be included.
+The global options can be overriden per notification. Extra options 
+such as `onRemove()` and `contentComponent` can be included.
 
 {{docs-snippet name="notification-options.js" title="component.js"}}

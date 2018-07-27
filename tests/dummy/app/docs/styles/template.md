@@ -1,8 +1,8 @@
 # Styles
 
 This addon supports customizing the notification style through SASS or 
-using the `ember-notifier` as a block param to apply a framework's 
-component classes.
+using `ember-notifier` as a block param to apply a framework's 
+component class.
 
 ## SASS
 
@@ -12,7 +12,7 @@ importing `ember-notifier.scss`.
 {{docs-snippet name='style-sass.scss' title='styles/app.scss' language='css'}}
 
 This approach is powerful enough to build entire themes on top of it. 
-You can find the entire list of available variables in 
+The entire list of available variables can be found in 
 [ember-notifier.scss](https://github.com/scottwernervt/ember-notifier/blob/master/app/styles/ember-notifier.scss). 
 
 ## Frameworks
@@ -59,4 +59,4 @@ Documentation on [Zurb Foundation Callouts](https://foundation.zurb.com/sites/do
 
 ### Other
 
-Do not see your framework here? Make a request [here](https://github.com/scottwernervt/ember-notifier/issues).
+Do not see your framework? Make a request [here](https://github.com/scottwernervt/ember-notifier/issues).

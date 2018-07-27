@@ -5,7 +5,7 @@ import defaultValue from '../../utils/default-value';
 import layout from './template';
 
 /**
- * Notification wrapper for icon, content, and close button.
+ * A notification wrapper for icon, content, and close button.
  *
  * Inline usage:
  * ```hbs
@@ -24,7 +24,7 @@ import layout from './template';
  *   closeComponent='my-close-component'}}
  * ```
  *
- * If the mouse enters the component and the notification is scheduled to be removed, it will be
+ * If the mouse enters the notification and the notification is scheduled to be removed, it will be
  * paused and then restarted when the mouse leaves.
  *
  * @class EmberNotifierNotification
@@ -48,7 +48,7 @@ export default Component.extend({
   notification: undefined,
 
   /**
-   * Remove notification closure action.
+   * Closure action to remove the notification.
    *
    * @argument close
    * @type ember/action
@@ -67,7 +67,7 @@ export default Component.extend({
   /**
    * The icon component to render.
    *
-   * Defaults to `ember-notifier-notification/icon`.
+   * Default is: `ember-notifier-notification/icon`.
    *
    * @argument iconComponent
    * @type string
@@ -77,7 +77,7 @@ export default Component.extend({
   /**
    * The content component to render.
    *
-   * Defaults to `ember-notifier-notification/content`.
+   * Default is: `ember-notifier-notification/content`.
    *
    * @argument contentComponent
    * @type string
@@ -87,7 +87,7 @@ export default Component.extend({
   /**
    * The close component to render.
    *
-   * Defaults to `ember-notifier-notification/close`.
+   * Default is: `ember-notifier-notification/close`.
    *
    * @argument closeComponent
    * @type string

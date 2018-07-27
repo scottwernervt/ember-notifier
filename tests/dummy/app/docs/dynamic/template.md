@@ -1,17 +1,17 @@
 # Dynamic
 
-The notification's content can be dynamic by passing a component to the
-`contentComponent` option.
+The notification's content can be made dynamic by passing a component 
+to the `contentComponent` option.
 
 {{#docs-snippet name="message-component-option.js"}}
   this.get('notifier').info(null, { contentComponent: 'my-component' });
 {{/docs-snippet}}
 
-We are going to create a background task using [ember-concurrency](http://ember-concurrency.com/).
-Based on the task result, the notification will be updated using the 
-content component closure action `setOption`. If 
-the task fails, it will be toggled to `is-danger` and if 
-successful, `is-success`.
+For example: We are going to create a background task 
+using [ember-concurrency](http://ember-concurrency.com/). Based on the 
+task result, the notification will be updated using the content 
+component closure action `setOption`. If the task fails, it will be 
+toggled to `is-danger` or if successful, `is-success`.
 
 Install `ember-concurrency`.
 

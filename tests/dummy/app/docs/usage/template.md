@@ -1,7 +1,7 @@
 # Usage
 
 Add the `ember-notifier` component to your application template. This
-container displays the notifications.
+container displays notifications.
 
 {{#docs-snippet name="usage-template.hbs" title="templates/application.hbs"}}
   {{ember-notifier position="is-top-right"}}
@@ -19,7 +19,7 @@ Inject the `notifier` service anywhere you want to launch a notification.
   });
 {{/docs-snippet}}
 
-Notifications can be added by calling the styled functions.
+Notifications can be added by calling styled functions.
 
 {{#docs-snippet name="usage-styled-functions.js"}}
   this.get('notifier').primary('Primary notification');
@@ -36,7 +36,7 @@ Custom notifications can be called using `add()`.
   this.get('notifier').add('Custom notification', { type: 'custom-class' });
 {{/docs-snippet}}
 
-All notifications can be cleared by using `empty()`.
+All notifications can be cleared using `empty()`.
 
 {{#docs-snippet name="empty.js"}}
   this.get('notifier').empty();

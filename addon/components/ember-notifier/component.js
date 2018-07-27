@@ -5,7 +5,7 @@ import config from 'ember-get-config';
 import layout from './template';
 
 /**
- * Notification container which positions and displays active notifications.
+ * The notification container which positions and displays active notifications.
  *
  * Inline usage:
  * ```hbs
@@ -44,6 +44,7 @@ export default Component.extend({
   /**
    * The location class name of notifications on the screen.
    *
+   * Other locations:
    * * `is-top`
    * * `is-top-left`
    * * `is-top-right`
