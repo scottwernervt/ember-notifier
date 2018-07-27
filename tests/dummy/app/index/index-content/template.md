@@ -7,8 +7,8 @@
 Features:
 
 * Uses **flexbox** and can be easily **customized using SASS/SCSS**.
-* Easily **apply a framework's style** like Bootstrap's Alert.
 * Does not **impose or include** any frameworks or icon packages.
+* Easily **apply a framework's style** like Bootstrap's Alert.
 * Support for **dynamic components**, for example, a background task
 preparing a document to download.
 
