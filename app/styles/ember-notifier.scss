@@ -150,7 +150,7 @@ $ember-notifier-close-button-size: 1.5rem !default;
   left: 0;
   width: $ember-notifier-icon-width;
   height: 100%;
-  color: rgba(255, 255, 255, .74);
+  color:$ember-notifier-icon-color;
   text-align: center;
 
   span {
