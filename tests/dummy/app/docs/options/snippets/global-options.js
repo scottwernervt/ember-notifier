@@ -20,7 +20,7 @@ module.exports = function(environment) {
       contentComponent: 'ember-notifier-notification/content',
       closeComponent: 'ember-notifier-notification/close',
       // options
-      position: 'is-top',
+      position: 'is-top-right',
       duration: 4200,
     },
   };

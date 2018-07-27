@@ -1,8 +1,9 @@
 # Icons
 
-Ember Notifier does not ship with an icon framework. You can take
-advantage of the global config icon class options if using a web font.
-For SVG icons, it is recommended to create a custom icon component.
+Ember Notifier does not ship with an icon framework. If you are using a 
+web font, you can take advantage of the global config icon class 
+options. For SVG icons, it is recommended to create a custom icon 
+component.
 
 ## Web Font
 
