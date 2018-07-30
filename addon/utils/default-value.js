@@ -8,7 +8,7 @@ import { computed } from '@ember/object';
  *
  * @function defaultValue
  * @param {string} fallback Fallback value if property is undefined.
- * @returns {string} The property value.
+ * @return {string} The property value.
  */
 export default function defaultValue(fallback) {
   return computed({
