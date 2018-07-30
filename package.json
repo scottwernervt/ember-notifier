@@ -23,7 +23,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "homepage": "https://github.com/scottwernervt/ember-notifier",
+  "homepage": "https://scottwernervt.github.io/ember-notifier",
   "repository": {
     "type": "git",
     "url": "https://github.com/scottwernervt/ember-notifier.git"
