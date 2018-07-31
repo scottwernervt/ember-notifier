@@ -21,7 +21,7 @@ ember-notifier
 [license-badge-url]: LICENSE.md
 [dependencies-badge]: https://david-dm.org/scottwernervt/ember-notifier.svg
 [dependencies-badge-url]: https://david-dm.org/scottwernervt/ember-notifier
-[devDependencies-badge]: https://david-dm.org/scottwernervt/ember-notifier.svg?type=dev
+[devDependencies-badge]: https://david-dm.org/scottwernervt/ember-notifier/dev-status.svg?theme=shields.io
 [devDependencies-badge-url]: https://david-dm.org/scottwernervt/ember-notifier?type=dev
 
 Easy, beautiful notifications for your Ember project.
