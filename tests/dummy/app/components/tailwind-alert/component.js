@@ -4,17 +4,17 @@ import layout from './template';
 export default Component.extend({
   layout,
 
-  classNames: ['border-l-4', 'p-4'],
+  classNames: ['docs-border-l-4', 'docs-p-4'],
   classNameBindings: [
-    'isInfo:bg-blue-lightest',
-    'isInfo:border-blue',
-    'isInfo:text-blue-dark',
-    'isWarning:bg-orange-lightest',
-    'isWarning:border-orange',
-    'isWarning:text-orange-dark',
-    'isDanger:bg-red-lightest',
-    'isDanger:border-red',
-    'isDanger:text-red-dark',
+    'isInfo:docs-bg-blue-lightest',
+    'isInfo:docs-border-blue',
+    'isInfo:docs-text-blue-dark',
+    'isWarning:docs-bg-orange-lightest',
+    'isWarning:docs-border-orange',
+    'isWarning:docs-text-orange-dark',
+    'isDanger:docs-bg-red-lightest',
+    'isDanger:docs-border-red',
+    'isDanger:docs-text-red-dark',
   ],
   attributeBindings: ['role'],
 
