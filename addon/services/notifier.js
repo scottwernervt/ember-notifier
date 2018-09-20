@@ -53,6 +53,8 @@ export default Service.extend({
 
     // options
     this.set('duration', conf.duration || 4200);
+    this.set('swipeThreshold', conf.swipeThreshold || 120);
+    this.set('swipeTimeout', conf.swipeTimeout || 500);
   },
 
   /**
@@ -167,6 +169,8 @@ export default Service.extend({
     const defaultOptions = EmberObject.create({
       type: this.get('primaryClass'),
       duration: this.get('duration'),
+      swipeThreshold: this.get('swipeThreshold'),
+      swipeTimeout: this.get('swipeTimeout'),
       timer: null,
       onRemove: () => void 0,
     });
