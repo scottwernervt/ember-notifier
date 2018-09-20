@@ -159,7 +159,9 @@ export default Service.extend({
    * @param {string} [options.message] Optional message.
    * @param {string} [options.contentComponent] Optional content component name.
    * @param {string} [options.icon] Optional icon class name or object name.
-   * @param {function} [options.onRemove] Callback function when notification is removed.
+   * @param {function} [options.onRemove] Optional callback function when notification is removed.
+   * @param {number} [options.swipeThreshold] The number of pixels a user must move before the notification is removed.
+   * @param {number} [options.swipeTimeout] The number of milliseconds a user must move before the notification is removed.
    */
   add(options = {}) {
     if (!options.message && !options.contentComponent) {
