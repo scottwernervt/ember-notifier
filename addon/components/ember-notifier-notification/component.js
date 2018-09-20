@@ -85,7 +85,7 @@ export default Component.extend({
   swipeThreshold: readOnly('notification.swipeThreshold'),
 
   /**
-   * The number of milliseconds user must move before notification will close.
+   * The number of milliseconds a user must move before notification will close.
    *
    * @argument swipeTimeout
    * @type number
