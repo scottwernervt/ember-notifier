@@ -23,6 +23,8 @@ const defaultConfig = {
   showAnimationClass: 'ember-notifier-notification-show',
   hideAnimationClass: 'ember-notifier-notification-hide',
   animationTimeout: 500, // ms
+  swipeThreshold: 120, // pixels
+  swipeTimeout: 500, // ms
 };
 
 /**
@@ -177,9 +179,11 @@ export default Service.extend({
     const defaultOptions = EmberObject.create({
       type: this.get('config.primaryClass'),
       duration: this.get('config.duration'),
-      timer: null,
       animationState: this.get('config.showAnimationClass'),
       animationTimeout: this.get('config.animationTimeout'),
+      swipeThreshold: this.get('config.swipeThreshold'),
+      swipeTimeout: this.get('config.swipeTimeout'),
+      timer: null,
       onRemove: () => void 0,
     });
 
