@@ -16,9 +16,9 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       message: 'msg',
       type: 'is-primary',
     }));
-    this.set('closeAction', () => {});
+    this.set('close', () => {});
 
-    await render(hbs`{{ember-notifier-notification notification=notification close=(action closeAction)}}`);
+    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
 
     assert.dom('.ember-notifier-notification-base').exists();
     assert.dom('.ember-notifier-notification-base').hasClass('is-primary');
@@ -51,9 +51,9 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       type: 'is-primary',
       contentComponent: 'message-component',
     }));
-    this.set('closeAction', () => {});
+    this.set('close', () => {});
 
-    await render(hbs`{{ember-notifier-notification notification=notification close=(action closeAction)}}`);
+    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
     await click('#update-type');
 
     assert.equal(this.get('notification.type'), 'is-info');
@@ -67,9 +67,9 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       message: 'msg',
       type: 'is-primary',
     }));
-    this.set('closeAction', () => {});
+    this.set('close', () => {});
 
-    await render(hbs`{{ember-notifier-notification notification=notification close=(action closeAction)}}`);
+    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
     await triggerEvent('.ember-notifier-notification-base', 'touchstart');
   });
 });
