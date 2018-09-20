@@ -1,5 +1,5 @@
 //! BEGIN-SNIPPET global-options.js
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     emberNotifier: {
       // styles and icons
@@ -22,6 +22,8 @@ module.exports = function(environment) {
       // options
       position: 'is-top-right',
       duration: 4200,
+      swipeThreshold: '120', // px
+      swipeTimeout: '500', // ms
     },
   };
 
