@@ -226,9 +226,7 @@ export default Service.extend({
    * @param {Object} notification The notification to schedule the removal on.
    */
   scheduleRemoval(notification) {
-    const timer = later(this, () => {
-      this.remove(notification);
-    }, notification.get('duration'));
+    const timer = later(this, () => this.remove(notification), notification.get('duration'));
     notification.set('timer', timer);
   },
 
