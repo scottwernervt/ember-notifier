@@ -1,25 +1,28 @@
-<form {{action "show" on="submit"}}>
-  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-    <div class="-mx-3 md:flex mb-6">
-      <div class="md:w-2/3 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-               for="notification-message">
+<form class="docs-w-full docs-max-w-md" {{action "show" on="submit"}}>
+  <div
+    class="docs-bg-white docs-shadow-md docs-rounded docs-px-8 docs-pt-6 docs-pb-8 docs-mb-4 docs-flex docs-flex-col docs-my-2">
+    <div class="docs-flex docs-flex-wrap docs--mx-3 docs-mb-6">
+      <div class="docs-w-full docs-md:w-1/2 docs-px-3 docs-mb-6 docs-md:mb-0">
+        <label
+          class="docs-block docs-uppercase docs-tracking-wide docs-text-grey-darker docs-text-xs docs-font-bold docs-mb-2"
+          for="notification-message">
           Message
         </label>
         {{input
           id="notification-message"
-          class="appearance-none block w-full text-grey-darker border border-grey-lighter rounded py-3 px-4"
+          class="docs-appearance-none docs-block docs-w-full docs-bg-grey-lighter docs-text-grey-darker docs-border docs-border-grey-lighter docs-rounded docs-py-3 docs-px-4 docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
           type="text"
           value=message}}
       </div>
-      <div class="md:w-1/3 px-3">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-               for="notification-type">
+      <div class="docs-w-full docs-md:w-1/2 docs-px-3">
+        <label
+          class="docs-block docs-uppercase docs-tracking-wide docs-text-grey-darker docs-text-xs docs-font-bold mb-2"
+          for="notification-type">
           Type
         </label>
-        <div class="relative">
+        <div class="docs-relative">
           <select id="notification-type"
-                  class="block w-full border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
+                  class="docs-block docs-appearance-none docs-w-full docs-bg-grey-lighter docs-border docs-border-grey-lighter docs-text-grey-darker docs-py-3 docs-px-4 docs-pr-8 docs-rounded docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
                   onchange={{action (mut type) value="target.value"}}>
             {{#each types as |typeChoice|}}
               <option value={{typeChoice}} selected={{eq type typeChoice}}>
@@ -30,15 +33,16 @@
         </div>
       </div>
     </div>
-    <div class="-mx-3 md:flex mb-6">
-      <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-               for="notification-position">
+    <div class="docs-flex docs-flex-wrap docs--mx-3 docs-mb-6">
+      <div class="docs-w-full docs-md:w-1/2 docs-px-3 docs-mb-6 docs-md:mb-0">
+        <label
+          class="docs-block docs-uppercase docs-tracking-wide docs-text-grey-darker docs-text-xs docs-font-bold docs-mb-2"
+          for="notification-position">
           Position
         </label>
-        <div class="relative">
+        <div class="docs-relative">
           <select id="notification-position"
-                  class="block w-full border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
+                  class="docs-block docs-appearance-none docs-w-full docs-bg-grey-lighter docs-border docs-border-grey-lighter docs-text-grey-darker docs-py-3 docs-px-4 docs-pr-8 docs-rounded docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
                   onchange={{action "setPosition" value="target.value"}}>
             {{#each positions as |positionChoice|}}
               <option value={{positionChoice}} selected={{eq type positionChoice}}>
@@ -48,29 +52,32 @@
           </select>
         </div>
       </div>
-      <div class="md:w-1/2 px-3">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="notification-duration">
+      <div class="docs-w-full docs-md:w-1/2 docs-px-3">
+        <label
+          class="docs-block docs-uppercase docs-tracking-wide docs-text-grey-darker docs-text-xs docs-font-bold docs-mb-2"
+          for="notification-duration">
           Duration (ms)
         </label>
         {{input
           id="notification-duration"
-          class="appearance-none block w-full text-grey-darker border border-grey-lighter rounded py-3 px-4"
+          class="docs-appearance-none docs-block docs-w-full docs-bg-grey-lighter docs-text-grey-darker docs-border docs-border-grey-lighter docs-rounded docs-py-3 docs-px-4 docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
           type="number"
           min="0"
           step="100"
           value=duration}}
-        <p class="text-grey-dark text-xs italic">Disable auto clear with a value of 0.</p>
+        <p class="docs-text-grey-dark docs-text-xs docs-italic">Disable auto clear with a value of
+          0.</p>
       </div>
     </div>
-    <div class="flex mb-4">
+    <div class="docs-flex docs-mb-4">
       <button
-        class="py-2 px-4 rounded bg-blue hover:bg-blue-dark text-white font-bold"
+        class="docs-py-2 docs-px-4 docs-rounded docs-bg-blue docs-hover:bg-blue-dark docs-text-white docs-font-bold"
         type="button"
         {{action "show"}}>
         Show
       </button>
       <button
-        class="p-2 ml-4 mr-2 border-2 rounded bg-white hover:bg-grey-lightest text-grey-darkest font-bold"
+        class="docs-p-2 docs-ml-4 docs-mr-2 docs-border-2 docs-rounded docs-bg-white docs-hover:bg-grey-lightest docs-text-grey-darkest docs-font-bold"
         type="button"
         {{action "clearAll"}}>
         Clear all

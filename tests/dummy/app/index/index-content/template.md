@@ -1,5 +1,5 @@
-<div class="flex flex-col">
-  <div class="self-center">
+<div class="docs-flex docs-flex-col">
+  <div class="docs-self-center">
     <img src="{{rootUrl}}assets/images/notification-demo.gif" />
   </div>
 </div>
