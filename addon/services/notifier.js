@@ -169,7 +169,9 @@ export default Service.extend({
    * @param {string} [options.hideAnimationClass] Optional hide animation class name.
    * @param {string} [options.animationTimeout] Optional number of milliseconds before a
    * notification is removed.
-   * @param {function} [options.onRemove] Callback function when notification is removed.
+   * @param {number} [options.swipeThreshold] Number of pixels a swipe right must travel.
+   * @param {number} [options.swipeTimeout] Number of milliseconds between touch start and end.
+   * @param {function} [options.onRemove] Optional callback function when notification is removed.
    */
   add(options = {}) {
     if (!options.message && !options.contentComponent) {
