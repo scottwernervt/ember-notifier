@@ -163,6 +163,10 @@ export default Service.extend({
    * @param {string} [options.message] Optional message.
    * @param {string} [options.contentComponent] Optional content component name.
    * @param {string} [options.icon] Optional icon class name or object name.
+   * @param {string} [options.showAnimationClass] Optional on show animation class name.
+   * @param {string} [options.hideAnimationClass] Optional on hide animation class name.
+   * @param {string} [options.animationTimeout] Optional number of milliseconds before a
+   * notification is removed.
    * @param {function} [options.onRemove] Callback function when notification is removed.
    */
   add(options = {}) {
