@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { readOnly } from '@ember/object/computed';
+import { later } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 import defaultValue from '../../utils/default-value';
 import layout from './template';
@@ -35,7 +36,7 @@ export default Component.extend({
   notifier: service(),
 
   classNames: ['ember-notifier-notification-base'],
-  classNameBindings: ['typeClassName'],
+  classNameBindings: ['typeClass', 'animationStateClass'],
   attributeBindings: ['role'],
   role: 'alert',
 
@@ -58,11 +59,20 @@ export default Component.extend({
   /**
    * The notification type class name.
    *
-   * @argument typeClassName
+   * @argument typeClass
    * @type string
    * @readOnly
    */
-  typeClassName: readOnly('notification.type'),
+  typeClass: readOnly('notification.type'),
+
+  /**
+   * The notification animation state class name.
+   *
+   * @argument animationStateClass
+   * @type string
+   * @readOnly
+   */
+  animationStateClass: readOnly('notification.animationState'),
 
   /**
    * The icon component to render.
@@ -95,11 +105,12 @@ export default Component.extend({
   closeComponent: defaultValue('ember-notifier-notification/close'),
 
   willDestroyElement() {
+    this._super(...arguments);
+
     const notification = this.get('notification');
     if (notification.get('timer')) {
       this.get('notifier').cancelRemoval(notification);
     }
-    this._super(...arguments);
   },
 
   mouseEnter(/* event */) {
