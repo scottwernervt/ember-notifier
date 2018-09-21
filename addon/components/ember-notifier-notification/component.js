@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import { readOnly } from '@ember/object/computed';
-import { later } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 import defaultValue from '../../utils/default-value';
 import layout from './template';
