@@ -74,6 +74,7 @@ module('service:notifier', 'Unit | Service | notifier', function (hooks) {
     service.add({
       message: 'schedule',
       duration: 500,
+      animationTimeout: 0,
     });
     service.cancelRemoval(service.get('notifications.0'));
 
@@ -92,6 +93,7 @@ module('service:notifier', 'Unit | Service | notifier', function (hooks) {
     service.add({
       message: 'schedule',
       duration: 500,
+      animationTimeout: 0,
     });
 
     run.later(() => {
