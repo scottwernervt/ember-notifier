@@ -1,18 +1,17 @@
 # Animation
 
-`ember-notifier` uses CSS transitions to animate adding and removing of 
-a notification.
+CSS transitions are used to animate the addition and removal of a 
+notification.
 
-## Custom
+## Customize
 
-Custom animation classes can be set globally using global config options.
+Custom animation classes can be set using global config options.
 
 {{docs-snippet name='animation-config-environment.js' title='config/environment.js'}}
 
-The option `animationTimeout` is the number of milliseconds before a 
+The `animationTimeout` option is the number of milliseconds before a 
 notification is removed.
-Ideally, it should equal the CSS `animation-delay` property value.
-
+Ideally, this should equal the CSS `animation-delay` property value. 
 Check out [animista](http://animista.net/) for various CSS transition 
 examples.
 

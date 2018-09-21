@@ -1,8 +1,9 @@
 import { A } from '@ember/array';
-import EmberObject from '@ember/object';
+import EmberObject, { getWithDefault } from '@ember/object';
 import { assign } from '@ember/polyfills';
 import { cancel, later } from '@ember/runloop';
 import Service from '@ember/service';
+import { isBlank, isPresent } from '@ember/utils';
 import config from 'ember-get-config';
 
 /**
@@ -157,14 +158,14 @@ export default Service.extend({
    * @method add
    * @param {Object} options Notification options.
    * @param {string} options.type Styled class name.
-   * @param {number} options.duration Remove notification after "n" ms. Disable scheduled removal
-   * with a value of "0".
+   * @param {number} options.duration Remove notification after "n" milliseconds. Disable scheduled
+   * removal with a value of "0".
    * @param {string} [options.title] Optional title.
    * @param {string} [options.message] Optional message.
    * @param {string} [options.contentComponent] Optional content component name.
    * @param {string} [options.icon] Optional icon class name or object name.
-   * @param {string} [options.showAnimationClass] Optional on show animation class name.
-   * @param {string} [options.hideAnimationClass] Optional on hide animation class name.
+   * @param {string} [options.showAnimationClass] Optional show animation class name.
+   * @param {string} [options.hideAnimationClass] Optional hide animation class name.
    * @param {string} [options.animationTimeout] Optional number of milliseconds before a
    * notification is removed.
    * @param {function} [options.onRemove] Callback function when notification is removed.
