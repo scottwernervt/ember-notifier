@@ -50,6 +50,12 @@ export default Service.extend({
     this.set('dangerIcon', conf.dangerIcon || 'fas fa-fire');
     this.set('secondaryClass', conf.secondaryClass || 'is-secondary');
     this.set('secondaryIcon', conf.secondaryIcon || 'fas fa-comment');
+    this.set('secondaryIcon', conf.secondaryIcon || 'fas fa-comment');
+
+    // animations
+    this.set('showAnimationClass', conf.showAnimationClass || 'ember-notifier-notification-show');
+    this.set('hideAnimationClass', conf.hideAnimationClass || 'ember-notifier-notification-hide');
+    this.set('animationTimeout', conf.animationTimeout || 500);
 
     // options
     this.set('duration', conf.duration || 4200);
@@ -167,6 +173,7 @@ export default Service.extend({
     const defaultOptions = EmberObject.create({
       type: this.get('primaryClass'),
       duration: this.get('duration'),
+      animationState: this.get('showAnimationClass'),
       timer: null,
       onRemove: () => void 0,
     });
@@ -187,10 +194,12 @@ export default Service.extend({
    */
   remove(notification) {
     this.cancelRemoval(notification);
+    notification.set('animationState', this.get('hideAnimationClass'));
+
     later(this, () => {
       notification.onRemove();
       this.get('notifications').removeObject(notification);
-    }, 100);
+    }, this.get('animationTimeout'));
   },
 
   /**
