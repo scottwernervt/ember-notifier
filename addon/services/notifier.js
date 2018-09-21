@@ -173,8 +173,9 @@ export default Service.extend({
     const defaultOptions = EmberObject.create({
       type: this.get('primaryClass'),
       duration: this.get('duration'),
-      animationState: this.get('showAnimationClass'),
       timer: null,
+      animationState: this.get('showAnimationClass'),
+      animationTimeout: this.get('animationTimeout'),
       onRemove: () => void 0,
     });
 
@@ -199,7 +200,7 @@ export default Service.extend({
     later(this, () => {
       notification.onRemove();
       this.get('notifications').removeObject(notification);
-    }, this.get('animationTimeout'));
+    }, notification.get('animationTimeout'));
   },
 
   /**
