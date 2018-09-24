@@ -1,9 +1,8 @@
 import { A } from '@ember/array';
-import EmberObject, { getWithDefault } from '@ember/object';
+import EmberObject from '@ember/object';
 import { assign } from '@ember/polyfills';
 import { cancel, later } from '@ember/runloop';
 import Service from '@ember/service';
-import { isBlank, isPresent } from '@ember/utils';
 import config from 'ember-get-config';
 
 /**
