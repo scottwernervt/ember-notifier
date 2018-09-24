@@ -1,9 +1,29 @@
+import { getOwner } from '@ember/application';
 import { A } from '@ember/array';
-import EmberObject from '@ember/object';
+import EmberObject, { computed } from '@ember/object';
 import { assign } from '@ember/polyfills';
 import { cancel, later, run } from '@ember/runloop';
 import Service from '@ember/service';
-import config from 'ember-get-config';
+
+const defaultConfig = {
+  position: 'is-top-right',
+  duration: 4200, // ms
+  primaryClass: 'is-primary',
+  primaryIcon: 'fas fa-bell',
+  infoClass: 'is-info',
+  infoIcon: 'fas fa-info',
+  successClass: 'is-success',
+  successIcon: 'fas fa-check',
+  warningClass: 'is-warning',
+  warningIcon: 'fas fa-exclamation',
+  dangerClass: 'is-danger',
+  dangerIcon: 'fas fa-fire',
+  secondaryClass: 'is-secondary',
+  secondaryIcon: 'fas fa-comment',
+  showAnimationClass: 'ember-notifier-notification-show',
+  hideAnimationClass: 'ember-notifier-notification-hide',
+  animationTimeout: 500, // ms
+};
 
 /**
  * The notifier service is the public API that provides access to displaying, adding, or removing
@@ -31,34 +51,14 @@ export default Service.extend({
    */
   notifications: null,
 
+  config: computed(function () {
+    const config = getOwner(this).resolveRegistration('config:environment').emberNotifier || {};
+    return assign(defaultConfig, config);
+  }),
+
   init() {
     this._super(...arguments);
     this.set('notifications', A());
-
-    const conf = config['emberNotifier'] || {};
-
-    // styling
-    this.set('primaryClass', conf.primaryClass || 'is-primary');
-    this.set('primaryIcon', conf.primaryIcon || 'fas fa-bell');
-    this.set('infoClass', conf.infoClass || 'is-info');
-    this.set('infoIcon', conf.infoIcon || 'fas fa-info');
-    this.set('successClass', conf.successClass || 'is-success');
-    this.set('successIcon', conf.successIcon || 'fas fa-check');
-    this.set('warningClass', conf.warningClass || 'is-warning');
-    this.set('warningIcon', conf.warningIcon || 'fas fa-exclamation');
-    this.set('dangerClass', conf.dangerClass || 'is-danger');
-    this.set('dangerIcon', conf.dangerIcon || 'fas fa-fire');
-    this.set('secondaryClass', conf.secondaryClass || 'is-secondary');
-    this.set('secondaryIcon', conf.secondaryIcon || 'fas fa-comment');
-    this.set('secondaryIcon', conf.secondaryIcon || 'fas fa-comment');
-
-    // animations
-    this.set('showAnimationClass', conf.showAnimationClass || 'ember-notifier-notification-show');
-    this.set('hideAnimationClass', conf.hideAnimationClass || 'ember-notifier-notification-hide');
-    this.set('animationTimeout', conf.animationTimeout || 500);
-
-    // options
-    this.set('duration', conf.duration || 4200);
   },
 
   /**
@@ -71,8 +71,8 @@ export default Service.extend({
   primary(message, options) {
     this.add(assign({
       message,
-      type: this.get('primaryClass'),
-      icon: this.get('primaryIcon'),
+      type: this.get('config.primaryClass'),
+      icon: this.get('config.primaryIcon'),
     }, options));
   },
 
@@ -86,8 +86,8 @@ export default Service.extend({
   info(message, options) {
     this.add(assign({
       message,
-      type: this.get('infoClass'),
-      icon: this.get('infoIcon'),
+      type: this.get('config.infoClass'),
+      icon: this.get('config.infoIcon'),
     }, options));
   },
 
@@ -101,8 +101,8 @@ export default Service.extend({
   success(message, options) {
     this.add(assign({
       message,
-      type: this.get('successClass'),
-      icon: this.get('successIcon'),
+      type: this.get('config.successClass'),
+      icon: this.get('config.successIcon'),
     }, options));
   },
 
@@ -116,8 +116,8 @@ export default Service.extend({
   warning(message, options) {
     this.add(assign({
       message,
-      type: this.get('warningClass'),
-      icon: this.get('warningIcon'),
+      type: this.get('config.warningClass'),
+      icon: this.get('config.warningIcon'),
     }, options));
   },
 
@@ -131,8 +131,8 @@ export default Service.extend({
   danger(message, options) {
     this.add(assign({
       message,
-      type: this.get('dangerClass'),
-      icon: this.get('dangerIcon'),
+      type: this.get('config.dangerClass'),
+      icon: this.get('config.dangerIcon'),
     }, options));
   },
 
@@ -146,8 +146,8 @@ export default Service.extend({
   secondary(message, options) {
     this.add(assign({
       message,
-      type: this.get('secondaryClass'),
-      icon: this.get('secondaryIcon'),
+      type: this.get('config.secondaryClass'),
+      icon: this.get('config.secondaryIcon'),
     }, options));
   },
 
@@ -175,11 +175,11 @@ export default Service.extend({
     }
 
     const defaultOptions = EmberObject.create({
-      type: this.get('primaryClass'),
-      duration: this.get('duration'),
+      type: this.get('config.primaryClass'),
+      duration: this.get('config.duration'),
       timer: null,
-      animationState: this.get('showAnimationClass'),
-      animationTimeout: this.get('animationTimeout'),
+      animationState: this.get('config.showAnimationClass'),
+      animationTimeout: this.get('config.animationTimeout'),
       onRemove: () => void 0,
     });
 
@@ -199,7 +199,7 @@ export default Service.extend({
    */
   remove(notification) {
     this.cancelRemoval(notification);
-    run(this, () => notification.set('animationState', this.get('hideAnimationClass')));
+    run(this, () => notification.set('animationState', this.get('config.hideAnimationClass')));
     later(this, () => {
       notification.onRemove();
       this.get('notifications').removeObject(notification);

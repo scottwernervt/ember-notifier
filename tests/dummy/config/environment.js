@@ -21,7 +21,7 @@ module.exports = function(environment) {
       'position': 'is-top',
       // showAnimationClass: null,
       // hideAnimationClass: null,
-      // animationTimeout: 500, // ms
+      // animationTimeout: 0, // ms
       //
       // addon
       //
