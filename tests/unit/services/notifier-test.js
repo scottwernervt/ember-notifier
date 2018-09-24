@@ -7,7 +7,7 @@ import { module, test } from 'qunit';
 module('service:notifier', 'Unit | Service | notifier', function (hooks) {
   setupTest(hooks);
 
-  test('#notification returns an array of notifications', function (assert) {
+  test('#notification property returns an array of notifications', function (assert) {
     assert.expect(2);
 
     const service = this.owner.factoryFor('service:notifier').create({});
@@ -130,5 +130,21 @@ module('service:notifier', 'Unit | Service | notifier', function (hooks) {
       assert.ok(method);
       assert.equal(typeOf(method), 'function');
     });
+  });
+
+  test('it has default notification animations for adding and removing', async function (assert) {
+    assert.expect(2);
+
+    const service = this.owner.factoryFor('service:notifier').create({});
+    service.add({ message: 'msg', duration: 0});
+
+    const notification = service.get('notifications').get('firstObject');
+
+    assert.equal(notification.get('animationState'), 'ember-notifier-notification-show');
+
+    service.remove(notification);
+    await settled();
+
+    assert.equal(notification.get('animationState'), 'ember-notifier-notification-hide');
   });
 });
