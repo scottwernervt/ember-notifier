@@ -52,7 +52,6 @@ export default Service.extend({
   notifications: null,
 
   config: computed(function () {
-    console.debug('config');
     const config = getOwner(this).resolveRegistration('config:environment').emberNotifier || {};
     return assign(defaultConfig, config);
   }),

@@ -2,9 +2,8 @@
 module.exports = function(environment) {
   let ENV = {
     emberNotifier: {
-      // notification container
       position: 'is-top-right',
-      // notification styles and icons
+      duration: 4200, // ms
       primaryClass: 'is-primary',
       primaryIcon: 'fas fa-bell',
       infoClass: 'is-info',
@@ -17,15 +16,9 @@ module.exports = function(environment) {
       dangerIcon: 'fas fa-fire',
       secondaryClass: 'is-secondary',
       secondaryIcon: 'fas fa-comment',
-      // notification components
-      iconComponent: 'ember-notifier-notification/icon',
-      contentComponent: 'ember-notifier-notification/content',
-      closeComponent: 'ember-notifier-notification/close',
-      // notification animation
       showAnimationClass: 'ember-notifier-notification-show',
       hideAnimationClass: 'ember-notifier-notification-hide',
       animationTimeout: 500, // ms
-      duration: 4200, // ms
     },
   };
 
