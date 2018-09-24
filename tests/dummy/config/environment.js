@@ -19,6 +19,9 @@ module.exports = function(environment) {
 
     emberNotifier: {
       'position': 'is-top',
+      // showAnimationClass: null,
+      // hideAnimationClass: null,
+      // animationTimeout: 500, // ms
       //
       // addon
       //
