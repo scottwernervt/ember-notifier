@@ -14,6 +14,7 @@ Router.map(function () {
 
     this.route('styles');
     this.route('icons');
+    this.route('animation');
     this.route('dynamic');
     this.route('options');
   });

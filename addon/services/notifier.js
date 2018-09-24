@@ -1,7 +1,7 @@
 import { A } from '@ember/array';
 import EmberObject from '@ember/object';
 import { assign } from '@ember/polyfills';
-import { cancel, later } from '@ember/runloop';
+import { cancel, later, run } from '@ember/runloop';
 import Service from '@ember/service';
 import config from 'ember-get-config';
 
@@ -50,6 +50,12 @@ export default Service.extend({
     this.set('dangerIcon', conf.dangerIcon || 'fas fa-fire');
     this.set('secondaryClass', conf.secondaryClass || 'is-secondary');
     this.set('secondaryIcon', conf.secondaryIcon || 'fas fa-comment');
+    this.set('secondaryIcon', conf.secondaryIcon || 'fas fa-comment');
+
+    // animations
+    this.set('showAnimationClass', conf.showAnimationClass || 'ember-notifier-notification-show');
+    this.set('hideAnimationClass', conf.hideAnimationClass || 'ember-notifier-notification-hide');
+    this.set('animationTimeout', conf.animationTimeout || 500);
 
     // options
     this.set('duration', conf.duration || 4200);
@@ -151,12 +157,16 @@ export default Service.extend({
    * @method add
    * @param {Object} options Notification options.
    * @param {string} options.type Styled class name.
-   * @param {number} options.duration Remove notification after "n" ms. Disable scheduled removal
-   * with a value of "0".
+   * @param {number} options.duration Remove notification after "n" milliseconds. Disable scheduled
+   * removal with a value of "0".
    * @param {string} [options.title] Optional title.
    * @param {string} [options.message] Optional message.
    * @param {string} [options.contentComponent] Optional content component name.
    * @param {string} [options.icon] Optional icon class name or object name.
+   * @param {string} [options.showAnimationClass] Optional show animation class name.
+   * @param {string} [options.hideAnimationClass] Optional hide animation class name.
+   * @param {string} [options.animationTimeout] Optional number of milliseconds before a
+   * notification is removed.
    * @param {function} [options.onRemove] Callback function when notification is removed.
    */
   add(options = {}) {
@@ -168,6 +178,8 @@ export default Service.extend({
       type: this.get('primaryClass'),
       duration: this.get('duration'),
       timer: null,
+      animationState: this.get('showAnimationClass'),
+      animationTimeout: this.get('animationTimeout'),
       onRemove: () => void 0,
     });
 
@@ -187,10 +199,11 @@ export default Service.extend({
    */
   remove(notification) {
     this.cancelRemoval(notification);
+    run(this, () => notification.set('animationState', this.get('hideAnimationClass')));
     later(this, () => {
       notification.onRemove();
       this.get('notifications').removeObject(notification);
-    }, 100);
+    }, notification.get('animationTimeout'));
   },
 
   /**

@@ -92,8 +92,8 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    this.get('notifier').empty();
     this._super(...arguments);
+    this.get('notifier').empty();
   },
 
   actions: {
