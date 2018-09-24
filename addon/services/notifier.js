@@ -1,7 +1,7 @@
 import { A } from '@ember/array';
 import EmberObject from '@ember/object';
 import { assign } from '@ember/polyfills';
-import { cancel, later } from '@ember/runloop';
+import { cancel, later, run } from '@ember/runloop';
 import Service from '@ember/service';
 import config from 'ember-get-config';
 
@@ -199,8 +199,7 @@ export default Service.extend({
    */
   remove(notification) {
     this.cancelRemoval(notification);
-    notification.set('animationState', this.get('hideAnimationClass'));
-
+    run(this, () => notification.set('animationState', this.get('hideAnimationClass')));
     later(this, () => {
       notification.onRemove();
       this.get('notifications').removeObject(notification);
