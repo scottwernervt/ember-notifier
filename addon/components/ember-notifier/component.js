@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import { readOnly } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
-import config from 'ember-get-config';
 import layout from './template';
 
 /**
@@ -85,9 +84,9 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    const conf = config['emberNotifier'] || {};
+    const config = this.get('notifier.config');
     if (!this.get('position')) {
-      this.set('position', conf.position || 'is-top-right');
+      this.set('position', config.position);
     }
   },
 
