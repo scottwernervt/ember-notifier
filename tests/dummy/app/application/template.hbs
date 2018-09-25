@@ -15,81 +15,66 @@
     {{!--<button {{action close}}>Close</button>--}}
   {{!--{{/ember-notifier}}--}}
 
-  {{!--svg icon a --}}
-  {{!--{{ember-notifier iconComponent="notification-icon"}}--}}
-
-  {{!--svg icon b --}}
-  {{!--{{#ember-notifier as |notification close|}}--}}
-  {{!--{{#ember-notifier-notification/icon}}--}}
-  {{!--{{fa-icon notification.icon}}--}}
-  {{!--{{/ember-notifier-notification/icon}}--}}
-  {{!--{{ember-notifier-notification/content--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message--}}
-  {{!--contentComponent=notification.contentComponent}}--}}
-  {{!--{{ember-notifier-notification/close close=close}}--}}
-  {{!--{{/ember-notifier}}--}}
-
   {{!--bulma--}}
   {{!--{{#ember-notifier notificationClass='notification' as |notification close|}}--}}
-  {{!--<button class="delete" {{action close}}></button>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
+    {{!--<button class="delete" {{action close}}></button>--}}
+    {{!--{{#if notification.contentComponent}}--}}
+      {{!--{{component--}}
+        {{!--notification.contentComponent--}}
+        {{!--title=notification.title--}}
+        {{!--message=notification.message}}--}}
+    {{!--{{else}}--}}
+      {{!--{{notification.message}}--}}
+    {{!--{{/if}}--}}
   {{!--{{/ember-notifier}}--}}
 
   {{!--spectre--}}
   {{!--{{#ember-notifier notificationClass="toast" as |notification close|}}--}}
-  {{!--<button class="btn btn-clear float-right" {{action close}}></button>--}}
-  {{!--<h6>{{notification.title}}</h6>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
+    {{!--<button class="btn btn-clear float-right" {{action close}}></button>--}}
+    {{!--<h6>{{notification.title}}</h6>--}}
+    {{!--{{#if notification.contentComponent}}--}}
+      {{!--{{component--}}
+        {{!--notification.contentComponent--}}
+        {{!--title=notification.title--}}
+        {{!--message=notification.message}}--}}
+    {{!--{{else}}--}}
+      {{!--{{notification.message}}--}}
+    {{!--{{/if}}--}}
   {{!--{{/ember-notifier}}--}}
 
   {{!--foundation--}}
   {{!--{{#ember-notifier notificationClass="callout" as |notification close|}}--}}
-  {{!--<h5>{{notification.title}}</h5>--}}
-  {{!--<p>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
-  {{!--</p>--}}
-  {{!--<button class="close-button" aria-label="Dismiss alert" type="button" {{action close}}>--}}
-  {{!--<span aria-hidden="true">&times;</span>--}}
-  {{!--</button>--}}
+    {{!--<h5>{{notification.title}}</h5>--}}
+    {{!--<p>--}}
+      {{!--{{#if notification.contentComponent}}--}}
+        {{!--{{component--}}
+          {{!--notification.contentComponent--}}
+          {{!--title=notification.title--}}
+          {{!--message=notification.message}}--}}
+      {{!--{{else}}--}}
+        {{!--{{notification.message}}--}}
+      {{!--{{/if}}--}}
+    {{!--</p>--}}
+    {{!--<button class="close-button" aria-label="Dismiss alert" type="button" {{action close}}>--}}
+      {{!--<span aria-hidden="true">&times;</span>--}}
+    {{!--</button>--}}
   {{!--{{/ember-notifier}}--}}
 
   {{!--bootstrap--}}
   {{!--{{#ember-notifier notificationClass="alert alert-dismissible" as |notification close|}}--}}
-  {{!--<h4 class="alert-heading">{{notification.title}}</h4>--}}
-  {{!--<p>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
-  {{!--</p>--}}
-  {{!--<button type="button" class="close" data-dismiss="alert" aria-label="Close" {{action close}}>--}}
-  {{!--<span aria-hidden="true">&times;</span>--}}
-  {{!--</button>--}}
+    {{!--<h4 class="alert-heading">{{notification.title}}</h4>--}}
+    {{!--<p>--}}
+      {{!--{{#if notification.contentComponent}}--}}
+        {{!--{{component--}}
+          {{!--notification.contentComponent--}}
+          {{!--title=notification.title--}}
+          {{!--message=notification.message}}--}}
+      {{!--{{else}}--}}
+        {{!--{{notification.message}}--}}
+      {{!--{{/if}}--}}
+    {{!--</p>--}}
+    {{!--<button type="button" class="close" data-dismiss="alert" aria-label="Close" {{action close}}>--}}
+      {{!--<span aria-hidden="true">&times;</span>--}}
+    {{!--</button>--}}
   {{!--{{/ember-notifier}}--}}
 </div>
