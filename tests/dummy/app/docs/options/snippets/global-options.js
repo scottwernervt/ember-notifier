@@ -1,5 +1,5 @@
 //! BEGIN-SNIPPET global-options.js
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     emberNotifier: {
       position: 'is-top-right',
@@ -19,6 +19,8 @@ module.exports = function(environment) {
       showAnimationClass: 'ember-notifier-notification-show',
       hideAnimationClass: 'ember-notifier-notification-hide',
       animationTimeout: 500, // ms
+      swipeThreshold: 120, // px
+      swipeTimeout: 500, // ms
     },
   };
 

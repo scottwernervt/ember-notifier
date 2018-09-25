@@ -25,7 +25,11 @@ import layout from './template';
  * ```
  *
  * If the mouse enters the notification and the notification is scheduled to be removed, it will be
- * paused and then restarted when the mouse leaves.
+ * paused and then restarted when the mouse leaves. If the user swipes right, the notification will
+ * be closed.
+ *
+ * Touch source:
+ * [github.com/john-doherty/pure-swipe](https://github.com/john-doherty/pure-swipe)
  *
  * @class EmberNotifierNotification
  */
@@ -38,6 +42,13 @@ export default Component.extend({
   classNameBindings: ['typeClass', 'animationStateClass'],
   attributeBindings: ['role'],
   role: 'alert',
+
+  // touch swipe
+  xDown: 0,
+  yDown: 0,
+  xDiff: 0,
+  yDiff: 0,
+  timeDown: 0,
 
   /**
    * The notification options object.
@@ -72,6 +83,24 @@ export default Component.extend({
    * @readOnly
    */
   animationStateClass: readOnly('notification.animationState'),
+
+  /**
+   * The number of pixels a user must move before notification will close.
+   *
+   * @argument swipeThreshold
+   * @type number
+   * @readOnly
+   */
+  swipeThreshold: readOnly('notification.swipeThreshold'),
+
+  /**
+   * The number of milliseconds a user must move before notification will close.
+   *
+   * @argument swipeTimeout
+   * @type number
+   * @readOnly
+   */
+  swipeTimeout: readOnly('notification.swipeTimeout'),
 
   /**
    * The icon component to render.
@@ -112,6 +141,12 @@ export default Component.extend({
     }
   },
 
+  actions: {
+    setOption(property, value) {
+      this.get('notification').set(property, value);
+    }
+  },
+
   mouseEnter(/* event */) {
     const notification = this.get('notification');
     if (notification.get('duration') > 0) {
@@ -126,9 +161,39 @@ export default Component.extend({
     }
   },
 
-  actions: {
-    setOption(property, value) {
-      this.get('notification').set(property, value);
+  touchStart(event) {
+    this.timeDown = Date.now();
+    this.xDown = event.touches[0].clientX;
+    this.yDown = event.touches[0].clientY;
+    this.xDiff = 0;
+    this.yDiff = 0;
+  },
+
+  touchMove(event) {
+    if (!this.xDown || !this.yDown) {
+      return;
     }
+
+    const xUp = event.touches[0].clientX;
+    const yUp = event.touches[0].clientY;
+
+    this.xDiff = this.xDown - xUp;
+    this.yDiff = this.yDown - yUp;
+  },
+
+  touchEnd(/* event */) {
+    const timeDiff = Date.now() - this.timeDown;
+
+    if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) {
+      if (Math.abs(this.xDiff) > this.swipeThreshold && timeDiff < this.swipeTimeout) {
+        if (this.xDiff < 0) {
+          this.close();
+        }
+      }
+    }
+
+    this.xDown = 0;
+    this.yDown = 0;
+    this.timeDown = 0;
   },
 });

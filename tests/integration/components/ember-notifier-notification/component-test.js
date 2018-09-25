@@ -1,9 +1,9 @@
 import EmberObject from '@ember/object';
 import Component from '@ember/component';
-import { render, click } from '@ember/test-helpers';
+import { render, click, triggerEvent } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import { module, test } from 'qunit';
+import { module, test, skip } from 'qunit';
 
 module('Integration | Component | ember-notifier-notification', function (hooks) {
   setupRenderingTest(hooks);
@@ -16,9 +16,9 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       message: 'msg',
       type: 'is-primary',
     }));
-    this.set('closeAction', () => {});
+    this.set('close', () => {});
 
-    await render(hbs`{{ember-notifier-notification notification=notification close=(action closeAction)}}`);
+    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
 
     assert.dom('.ember-notifier-notification-base').exists();
     assert.dom('.ember-notifier-notification-base').hasClass('is-primary');
@@ -51,11 +51,25 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       type: 'is-primary',
       contentComponent: 'message-component',
     }));
-    this.set('closeAction', () => {});
+    this.set('close', () => {});
 
-    await render(hbs`{{ember-notifier-notification notification=notification close=(action closeAction)}}`);
+    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
     await click('#update-type');
 
     assert.equal(this.get('notification.type'), 'is-info');
+  });
+
+  skip('swipe right to close notification', async function (assert) {
+    assert.expect(1);
+
+    this.set('notification', EmberObject.create({
+      title: 'header',
+      message: 'msg',
+      type: 'is-primary',
+    }));
+    this.set('close', () => {});
+
+    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
+    await triggerEvent('.ember-notifier-notification-base', 'touchstart');
   });
 });

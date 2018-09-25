@@ -23,6 +23,8 @@ const defaultConfig = {
   showAnimationClass: 'ember-notifier-notification-show',
   hideAnimationClass: 'ember-notifier-notification-hide',
   animationTimeout: 500, // ms
+  swipeThreshold: 120, // pixels
+  swipeTimeout: 500, // ms
 };
 
 /**
@@ -167,7 +169,9 @@ export default Service.extend({
    * @param {string} [options.hideAnimationClass] Optional hide animation class name.
    * @param {string} [options.animationTimeout] Optional number of milliseconds before a
    * notification is removed.
-   * @param {function} [options.onRemove] Callback function when notification is removed.
+   * @param {number} [options.swipeThreshold] Number of pixels a swipe right must travel.
+   * @param {number} [options.swipeTimeout] Number of milliseconds between touch start and end.
+   * @param {function} [options.onRemove] Optional callback function when notification is removed.
    */
   add(options = {}) {
     if (!options.message && !options.contentComponent) {
@@ -177,9 +181,11 @@ export default Service.extend({
     const defaultOptions = EmberObject.create({
       type: this.get('config.primaryClass'),
       duration: this.get('config.duration'),
-      timer: null,
       animationState: this.get('config.showAnimationClass'),
       animationTimeout: this.get('config.animationTimeout'),
+      swipeThreshold: this.get('config.swipeThreshold'),
+      swipeTimeout: this.get('config.swipeTimeout'),
+      timer: null,
       onRemove: () => void 0,
     });
 
@@ -222,9 +228,7 @@ export default Service.extend({
    * @param {Object} notification The notification to schedule the removal on.
    */
   scheduleRemoval(notification) {
-    const timer = later(this, () => {
-      this.remove(notification);
-    }, notification.get('duration'));
+    const timer = later(this, () => this.remove(notification), notification.get('duration'));
     notification.set('timer', timer);
   },
 
