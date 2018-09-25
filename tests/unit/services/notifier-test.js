@@ -4,7 +4,7 @@ import { typeOf } from '@ember/utils';
 import { setupTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('service:notifier', 'Unit | Service | notifier', function (hooks) {
+module('Unit | Service | notifier', function (hooks) {
   setupTest(hooks);
 
   test('#notification property returns an array of notifications', function (assert) {
@@ -136,7 +136,7 @@ module('service:notifier', 'Unit | Service | notifier', function (hooks) {
     assert.expect(2);
 
     const service = this.owner.factoryFor('service:notifier').create({});
-    service.add({ message: 'msg', duration: 0});
+    service.add({ message: 'msg', duration: 0 });
 
     const notification = service.get('notifications').get('firstObject');
 
