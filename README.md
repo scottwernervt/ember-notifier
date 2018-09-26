@@ -38,8 +38,51 @@ ember install ember-notifier
 Usage
 ------------------------------------------------------------------------------
 
-See [documentation](https://scottwernervt.github.io/ember-notifier).
+Add the `ember-notifier` component to your application template. This 
+container displays notifications.
 
+```hbs
+{{ember-notifier position="is-top-right"}}
+{{outlet}}
+```
+
+Inject the `notifier` service anywhere you want to launch a 
+notification.
+
+```js
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+
+export default Component.extend({
+  notifier: service(),
+});
+```
+
+Notifications can be added by calling styled functions.
+
+```js
+this.get('notifier').primary('Primary notification');
+this.get('notifier').info('Information notification');
+this.get('notifier').success('Success notification');
+this.get('notifier').warning('Warning notification');
+this.get('notifier').danger('Danger notification');
+this.get('notifier').secondary('Secondary notification');
+```
+
+Custom notifications can be called using `add()`.
+
+```js
+this.get('notifier').add('Custom notification', { type: 'custom-class' });
+```
+
+All notifications can be cleared using `empty()`.
+
+```js
+this.get('notifier').empty();
+```
+
+Check out the [documentation](https://scottwernervt.github.io/ember-notifier) 
+for more customization and options.
 
 Contributing
 ------------------------------------------------------------------------------
@@ -69,7 +112,8 @@ Contributing
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
-### Favicon
+Favicon
+--------
 
 Created at [favicon.io](https://favicon.io/?t=EN&ff=Aldrich&fs=72&fc=%23FFF&b=rounded&bc=%23A0A).
 
