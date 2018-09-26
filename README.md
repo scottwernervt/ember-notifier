@@ -112,7 +112,8 @@ Contributing
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
-### Favicon
+Favicon
+--------
 
 Created at [favicon.io](https://favicon.io/?t=EN&ff=Aldrich&fs=72&fc=%23FFF&b=rounded&bc=%23A0A).
 
