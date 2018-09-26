@@ -31,7 +31,7 @@ import layout from './template';
  *
  * @class EmberNotifierNotification
  */
-export default Component.extend({
+export default Component.extend(SwipeSupportMixin, {
   layout,
 
   notifier: service(),
@@ -94,6 +94,15 @@ export default Component.extend({
   swipeTimeout: readOnly('notification.swipeTimeout'),
 
   /**
+   * The swipe direction, "left" or "right", to close a notification.
+   *
+   * @argument swipeDirection
+   * @type string
+   * @readOnly
+   */
+  swipeDirection: readOnly('notification.swipeDirection'),
+
+  /**
    * The icon component to render.
    *
    * Default is: `ember-notifier-notification/icon`.
@@ -151,4 +160,23 @@ export default Component.extend({
       this.get('notifier').scheduleRemoval(notification);
     }
   },
+
+  onSwipe(direction) {
+    this.close();
+    // if
+    // let position = this.get('position');
+    // let open = this.get('open');
+    // let gesturesEnabled = this.get('gesturesEnabled');
+    // let isMenuSwipe = closest(target, '.bm-menu', true);
+    //
+    // if (!gesturesEnabled) {
+    //   return;
+    // }
+    //
+    // if (open && isMenuSwipe && position === direction) {
+    //   this.get('state.actions').close();
+    // } else if (!open && position !== direction) {
+    //   this.get('state.actions').open();
+    // }
+  }
 });
