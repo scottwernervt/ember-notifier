@@ -9,6 +9,8 @@ module.exports = function() {
     getChannelURL('canary')
   ]).then((urls) => {
     return {
+      // TODO: Toggle to false (https://github.com/ember-cli/ember-try/issues/207).
+      useYarn: true,
       scenarios: [
         {
           name: 'ember-lts-2.16',
