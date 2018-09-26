@@ -1,7 +1,8 @@
 import Component from '@ember/component';
 import { readOnly } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
-import defaultValue from '../../utils/default-value';
+import SwipeSupportMixin from 'ember-notifier/mixins/swipe-support';
+import defaultValue from 'ember-notifier/utils/default-value';
 import layout from './template';
 
 /**
@@ -28,9 +29,6 @@ import layout from './template';
  * paused and then restarted when the mouse leaves. If the user swipes right, the notification will
  * be closed.
  *
- * Touch source:
- * [github.com/john-doherty/pure-swipe](https://github.com/john-doherty/pure-swipe)
- *
  * @class EmberNotifierNotification
  */
 export default Component.extend({
@@ -42,13 +40,6 @@ export default Component.extend({
   classNameBindings: ['typeClass', 'animationStateClass'],
   attributeBindings: ['role'],
   role: 'alert',
-
-  // touch swipe
-  xDown: 0,
-  yDown: 0,
-  xDiff: 0,
-  yDiff: 0,
-  timeDown: 0,
 
   /**
    * The notification options object.
@@ -159,41 +150,5 @@ export default Component.extend({
     if (notification.get('duration') > 0) {
       this.get('notifier').scheduleRemoval(notification);
     }
-  },
-
-  touchStart(event) {
-    this.timeDown = Date.now();
-    this.xDown = event.touches[0].clientX;
-    this.yDown = event.touches[0].clientY;
-    this.xDiff = 0;
-    this.yDiff = 0;
-  },
-
-  touchMove(event) {
-    if (!this.xDown || !this.yDown) {
-      return;
-    }
-
-    const xUp = event.touches[0].clientX;
-    const yUp = event.touches[0].clientY;
-
-    this.xDiff = this.xDown - xUp;
-    this.yDiff = this.yDown - yUp;
-  },
-
-  touchEnd(/* event */) {
-    const timeDiff = Date.now() - this.timeDown;
-
-    if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) {
-      if (Math.abs(this.xDiff) > this.swipeThreshold && timeDiff < this.swipeTimeout) {
-        if (this.xDiff < 0) {
-          this.close();
-        }
-      }
-    }
-
-    this.xDown = 0;
-    this.yDown = 0;
-    this.timeDown = 0;
   },
 });
