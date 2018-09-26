@@ -162,21 +162,8 @@ export default Component.extend(SwipeSupportMixin, {
   },
 
   onSwipe(direction) {
-    this.close();
-    // if
-    // let position = this.get('position');
-    // let open = this.get('open');
-    // let gesturesEnabled = this.get('gesturesEnabled');
-    // let isMenuSwipe = closest(target, '.bm-menu', true);
-    //
-    // if (!gesturesEnabled) {
-    //   return;
-    // }
-    //
-    // if (open && isMenuSwipe && position === direction) {
-    //   this.get('state.actions').close();
-    // } else if (!open && position !== direction) {
-    //   this.get('state.actions').open();
-    // }
+    if (this.get('swipeDirection') === direction) {
+      this.close();
+    }
   }
 });
