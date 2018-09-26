@@ -48,12 +48,13 @@ Contributing
 
 * `git clone https://github.com/scottwernervt/ember-notifier`
 * `cd ember-notifier`
-* `yarn install`
+* `npm install`
 
 ### Linting
 
-* `yarn lint:js`
-* `yarn lint:js --fix`
+* `npm run lint:hbs`
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
 
 ### Running tests
 

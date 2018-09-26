@@ -1,6 +1,10 @@
 {{! BEGIN-SNIPPET bootstrap-application.hbs }}
-{{#ember-notifier notificationClass="alert alert-dismissible" as |notification close|}}
-  <h4 class="alert-heading">{{notification.title}}</h4>
+{{#ember-notifier
+  notificationClass="alert alert-dismissible"
+as |notification close|}}
+  <h4 class="alert-heading">
+    {{notification.title}}
+  </h4>
   <p>
     {{#if notification.contentComponent}}
       {{component
@@ -12,7 +16,12 @@
       {{notification.message}}
     {{/if}}
   </p>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close" {{action close}}>
+  <button
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+    onclick={{action close}}>
     <span aria-hidden="true">&times;</span>
   </button>
 {{/ember-notifier}}

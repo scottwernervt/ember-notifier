@@ -21,9 +21,10 @@
           Type
         </label>
         <div class="docs-relative">
-          <select id="notification-type"
-                  class="docs-block docs-appearance-none docs-w-full docs-bg-grey-lighter docs-border docs-border-grey-lighter docs-text-grey-darker docs-py-3 docs-px-4 docs-pr-8 docs-rounded docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
-                  onchange={{action (mut type) value="target.value"}}>
+          <select
+            id="notification-type"
+            class="docs-block docs-appearance-none docs-w-full docs-bg-grey-lighter docs-border docs-border-grey-lighter docs-text-grey-darker docs-py-3 docs-px-4 docs-pr-8 docs-rounded docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
+            onchange={{action (mut type) value="target.value"}}>
             {{#each types as |typeChoice|}}
               <option value={{typeChoice}} selected={{eq type typeChoice}}>
                 {{capitalize typeChoice}}
@@ -41,9 +42,10 @@
           Position
         </label>
         <div class="docs-relative">
-          <select id="notification-position"
-                  class="docs-block docs-appearance-none docs-w-full docs-bg-grey-lighter docs-border docs-border-grey-lighter docs-text-grey-darker docs-py-3 docs-px-4 docs-pr-8 docs-rounded docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
-                  onchange={{action "setPosition" value="target.value"}}>
+          <select
+            id="notification-position"
+            class="docs-block docs-appearance-none docs-w-full docs-bg-grey-lighter docs-border docs-border-grey-lighter docs-text-grey-darker docs-py-3 docs-px-4 docs-pr-8 docs-rounded docs-leading-tight docs-focus:outline-none docs-focus:bg-white docs-focus:border-grey"
+            onchange={{action "setPosition" value="target.value"}}>
             {{#each positions as |positionChoice|}}
               <option value={{positionChoice}} selected={{eq type positionChoice}}>
                 {{capitalize positionChoice}}
@@ -74,13 +76,13 @@
       <button
         class="docs-py-2 docs-px-4 docs-rounded docs-bg-blue docs-hover:bg-blue-dark docs-text-white docs-font-bold"
         type="button"
-        {{action "show"}}>
+        onclick={{action "show"}}>
         Show
       </button>
       <button
         class="docs-p-2 docs-ml-4 docs-mr-2 docs-border-2 docs-rounded docs-bg-white docs-hover:bg-grey-lightest docs-text-grey-darkest docs-font-bold"
         type="button"
-        {{action "clearAll"}}>
+        onclick={{action "clearAll"}}>
         Clear all
       </button>
     </div>
