@@ -23,8 +23,9 @@ const defaultConfig = {
   showAnimationClass: 'ember-notifier-notification-show',
   hideAnimationClass: 'ember-notifier-notification-hide',
   animationTimeout: 500, // ms
-  swipeThreshold: 120, // pixels
+  swipeThreshold: 150, // pixels
   swipeTimeout: 500, // ms
+  swipeDirection: 'right', // 'left' or 'right'
 };
 
 /**
@@ -185,6 +186,7 @@ export default Service.extend({
       animationTimeout: this.get('config.animationTimeout'),
       swipeThreshold: this.get('config.swipeThreshold'),
       swipeTimeout: this.get('config.swipeTimeout'),
+      swipeDirection: this.get('config.swipeDirection'),
       timer: null,
       onRemove: () => void 0,
     });
