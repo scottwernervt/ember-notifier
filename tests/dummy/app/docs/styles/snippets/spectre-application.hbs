@@ -1,7 +1,11 @@
 {{! BEGIN-SNIPPET spectre-application.hbs }}
-{{#ember-notifier notificationClass="toast" as |notification close|}}
-  <button class="btn btn-clear float-right" {{action close}}></button>
-  <h6>{{notification.title}}</h6>
+{{#ember-notifier
+  notificationClass="toast"
+as |notification close|}}
+  <button class="btn btn-clear float-right" onclick={{action close}}></button>
+  <h6>
+    {{notification.title}}
+  </h6>
   {{#if notification.contentComponent}}
     {{component
       notification.contentComponent
