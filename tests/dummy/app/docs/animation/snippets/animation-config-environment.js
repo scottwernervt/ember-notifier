@@ -1,9 +1,9 @@
 //! BEGIN-SNIPPET animation-config-environment.js
 let ENV = {
   emberNotifier: {
-    showAnimationClass: 'custom-animation-class-show',
-    hideAnimationClass: 'custom-animation-class-hide',
-    animationTimeout: 250, // ms
+    showAnimationClass: 'my-animation-show-class',
+    hideAnimationClass: 'my-animation-hide-class',
+    animationTimeout: 150, // ms
   }
 }
 //! END-SNIPPET
