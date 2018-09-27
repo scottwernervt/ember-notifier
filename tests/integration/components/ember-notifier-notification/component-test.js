@@ -107,7 +107,75 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       .hasText('Close', 'Close button has text');
   });
 
+  test('it renders with custom components', async function (assert) {
+    assert.expect(10);
 
+    this.owner.register('component:icon-component', Component.extend({
+      layout: hbs`
+        <div class="icon-component">
+          {{icon}}
+        </div>`
+    }));
+
+    this.owner.register('component:content-component', Component.extend({
+      layout: hbs`
+        <div class="content-component">
+          <p class="title">
+            {{title}}
+          </p>
+          <p class="message">
+            {{message}}
+          </p>
+        </div>`
+    }));
+
+    this.owner.register('component:close-component', Component.extend({
+      layout: hbs`
+        <button class="close-component" {{action close}}>
+          Close
+        </button>`
+    }));
+
+    await render(hbs`
+      {{ember-notifier-notification
+        iconComponent="icon-component" 
+        contentComponent="content-component" 
+        closeComponent="close-component" 
+        notification=notification 
+        close=(action "onClose")}}
+    `);
+
+    assert
+      .dom('.ember-notifier-notification-base')
+      .exists();
+    assert
+      .dom('.ember-notifier-notification-base')
+      .hasClass('is-primary', 'Notification has correct type class');
+    assert
+      .dom('.icon-component')
+      .exists();
+    assert
+      .dom('.icon-component')
+      .hasText('primary-icon', 'Notification has an icon type');
+    assert
+      .dom('.content-component')
+      .exists();
+    assert
+      .dom('.title')
+      .exists();
+    assert
+      .dom('.title')
+      .hasText('title', 'Notification has a title');
+    assert
+      .dom('.message')
+      .exists();
+    assert
+      .dom('.message')
+      .hasText('message', 'Notification has a message');
+    assert
+      .dom('.close-component')
+      .exists();
+  });
 
   test('swipe right to close notification', async function (assert) {
     assert.expect(1);
