@@ -108,7 +108,10 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
   });
 
   test('it renders with custom components', async function (assert) {
-    assert.expect(10);
+    assert.expect(11);
+
+    let onClose = false;
+    this.actions.onClose = () => (onClose = true);
 
     this.owner.register('component:icon-component', Component.extend({
       layout: hbs`
@@ -175,6 +178,10 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
     assert
       .dom('.close-component')
       .exists();
+
+    await click('.close-component');
+
+    assert.ok(onClose, 'Close closure action was triggered')
   });
 
   test('swipe right to close notification', async function (assert) {
