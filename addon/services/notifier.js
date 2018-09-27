@@ -172,6 +172,7 @@ export default Service.extend({
    * notification is removed.
    * @param {number} [options.minSwipeDistance] Number of pixels a swipe right must travel.
    * @param {number} [options.maxSwipeTime] Number of milliseconds between touch start and end.
+   * @param {string} [options.swipeDirection] The swipe direction which will close a notification.
    * @param {function} [options.onRemove] Optional callback function when notification is removed.
    */
   add(options = {}) {
