@@ -39,7 +39,8 @@
     "start": "ember serve",
     "test": "ember test",
     "test:all": "ember try:each",
-    "test:reset": "ember try:reset"
+    "test:reset": "ember try:reset",
+    "test:server": "ember test --server"
   },
   "dependencies": {
     "ember-cli-babel": "7.1.2",
