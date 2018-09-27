@@ -196,6 +196,24 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
     assert.ok(onClose, 'Close closure action was triggered');
   });
 
+  test('#setOption action modifies notification properties', async function (assert) {
+    assert.expect(1);
+
+    this.owner.register('component:message-component', Component.extend({
+      layout: hbs`
+        <button id="update-type" {{action setOption "type" "is-info"}}>
+          Update Type
+        </button>`
+    }));
+
+    this.set('notification.contentComponent', 'message-component');
+
+    await render(template);
+    await click('#update-type');
+
+    assert.equal(this.get('notification.type'), 'is-info', 'Notification type is now info');
+  });
+
   test('swipe right to close notification', async function (assert) {
     assert.expect(1);
 
