@@ -43,7 +43,7 @@ export default Component.extend({
   /**
    * The location class name of notifications on the screen.
    *
-   * Support positions:
+   * Supported positions:
    * * `is-top`
    * * `is-top-left`
    * * `is-top-right`
