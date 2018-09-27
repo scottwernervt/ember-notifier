@@ -22,7 +22,7 @@ notification.
 
 {{#docs-snippet name="touch-primary-function.js"}}
   this.get('notifier').primary('Primary notification', {
-    contentComponent: 'large-dynamic-component',
+    contentComponent: 'my-large-dynamic-component',
     minSwipeDistance: '420',
   });
 {{/docs-snippet}}
