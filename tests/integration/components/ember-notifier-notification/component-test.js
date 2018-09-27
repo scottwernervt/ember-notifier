@@ -217,23 +217,12 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
   test('swipe right to close notification', async function (assert) {
     assert.expect(1);
 
-    this.set('notification', EmberObject.create({
-      title: 'header',
-      message: 'msg',
-      type: 'is-primary',
-      duration: 0,
-      animationTimeout: 0,
-      maxSwipeTime: 50,
-      minSwipeDistance: 150,
-      swipeDirection: 'right',
-    }));
+    let onClose = false;
+    this.actions.onClose = () => (onClose = true);
 
-    this.set('close', () => {
-      console.debug('wtf');
-      assert.ok(true, 'Notification closed');
-    });
-
-    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
+    await render(template);
     await triggerSwipeEvent(find('.ember-notifier-notification-base'), 'right');
+
+    assert.ok(onClose, 'Close closure action was triggered by swipe right');
   });
 });
