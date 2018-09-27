@@ -19,8 +19,9 @@ module.exports = function (environment) {
       showAnimationClass: 'ember-notifier-notification-show',
       hideAnimationClass: 'ember-notifier-notification-hide',
       animationTimeout: 500, // ms
-      swipeThreshold: 120, // px
-      swipeTimeout: 500, // ms
+      swipeDirection: 'right', // 'left' or 'right'
+      minSwipeDistance: 150, // px
+      maxSwipeTime: 300, // ms
     },
   };
 
