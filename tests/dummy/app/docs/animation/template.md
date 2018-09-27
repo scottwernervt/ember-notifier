@@ -1,23 +1,36 @@
 # Animation
 
-CSS transitions are used to animate the addition and removal of a 
-notification.
+CSS transitions are used to animate the launching and closing of a 
+notification. Check out [animista](http://animista.net/) for various 
+CSS transitions.
 
 ## Customize
 
-Custom animation classes can be set using global config options.
+The following options are supported:
+
+* `showAnimationClass` -- The transition class applied when a 
+notification is launched. Defaults to 
+`ember-notifier-notification-show`.
+
+* `hideAnimationClass` -- The transition class applied when a 
+notification is closed. Defaults to `ember-notifier-notification-hide`.
+
+* `animationTimeout` -- The number of milliseconds before a 
+notification is closed. It should equal the CSS `animation-delay` 
+property value. Defaults to `500`. 
+
+Each option can be set using the global config or when launching a 
+notification.
 
 {{docs-snippet name='animation-config-environment.js' title='config/environment.js'}}
 
-The `animationTimeout` option is the number of milliseconds before a 
-notification is removed.
-Ideally, this should equal the CSS `animation-delay` property value. 
-Check out [animista](http://animista.net/) for various CSS transition 
-examples.
+{{#docs-snippet name="animation-primary-function.js"}}
+  this.get('notifier').primary('Primary notification', { 
+    showAnimationClass: 'my-animation-show-class',
+  });
+{{/docs-snippet}}
 
 ## Disable
 
-To disable, set `showAnimationClass` and `hideAnimationClass` classes to 
-`null` and `animationTimeout` to `0`.
-
-{{docs-snippet name='disable-animation-config-environment.js' title='config/environment.js'}}
+Set `showAnimationClass` and `hideAnimationClass` classes to `null` 
+and `animationTimeout` to `0`.
