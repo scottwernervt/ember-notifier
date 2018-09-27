@@ -6,8 +6,8 @@ let meta;
 
 // Source: https://github.com/offirgolan/ember-burger-menu/blob/master/addon/mixins/swipe-support.js
 export default Mixin.create({
-  minSwipeDistance: readOnly('notification.swipeThreshold'),
-  maxSwipeTime: readOnly('notification.swipeTimeout'),
+  minSwipeDistance: readOnly('notification.minSwipeDistance'),
+  maxSwipeTime: readOnly('notification.maxSwipeTime'),
 
   onSwipe(/* direction, target */) {
   },

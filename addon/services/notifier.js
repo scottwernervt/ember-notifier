@@ -23,8 +23,8 @@ const defaultConfig = {
   showAnimationClass: 'ember-notifier-notification-show',
   hideAnimationClass: 'ember-notifier-notification-hide',
   animationTimeout: 500, // ms
-  swipeThreshold: 150, // pixels
-  swipeTimeout: 500, // ms
+  minSwipeDistance: 150, // pixels
+  maxSwipeTime: 300, // ms
   swipeDirection: 'right', // 'left' or 'right'
 };
 
@@ -170,8 +170,8 @@ export default Service.extend({
    * @param {string} [options.hideAnimationClass] Optional hide animation class name.
    * @param {string} [options.animationTimeout] Optional number of milliseconds before a
    * notification is removed.
-   * @param {number} [options.swipeThreshold] Number of pixels a swipe right must travel.
-   * @param {number} [options.swipeTimeout] Number of milliseconds between touch start and end.
+   * @param {number} [options.minSwipeDistance] Number of pixels a swipe right must travel.
+   * @param {number} [options.maxSwipeTime] Number of milliseconds between touch start and end.
    * @param {function} [options.onRemove] Optional callback function when notification is removed.
    */
   add(options = {}) {
@@ -184,8 +184,8 @@ export default Service.extend({
       duration: this.get('config.duration'),
       animationState: this.get('config.showAnimationClass'),
       animationTimeout: this.get('config.animationTimeout'),
-      swipeThreshold: this.get('config.swipeThreshold'),
-      swipeTimeout: this.get('config.swipeTimeout'),
+      minSwipeDistance: this.get('config.minSwipeDistance'),
+      maxSwipeTime: this.get('config.maxSwipeTime'),
       swipeDirection: this.get('config.swipeDirection'),
       timer: null,
       onRemove: () => void 0,

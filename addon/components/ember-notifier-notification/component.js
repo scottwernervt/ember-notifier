@@ -78,20 +78,20 @@ export default Component.extend(SwipeSupportMixin, {
   /**
    * The number of pixels a user must move before notification will close.
    *
-   * @argument swipeThreshold
+   * @argument minSwipeDistance
    * @type number
    * @readOnly
    */
-  swipeThreshold: readOnly('notification.swipeThreshold'),
+  swipeThreshold: readOnly('notification.minSwipeDistance'),
 
   /**
    * The number of milliseconds a user must move before notification will close.
    *
-   * @argument swipeTimeout
+   * @argument maxSwipeTime
    * @type number
    * @readOnly
    */
-  swipeTimeout: readOnly('notification.swipeTimeout'),
+  swipeTimeout: readOnly('notification.maxSwipeTime'),
 
   /**
    * The swipe direction, "left" or "right", to close a notification.
