@@ -184,6 +184,18 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
     assert.ok(onClose, 'Close closure action was triggered')
   });
 
+  test('close button sends closure action', async function (assert) {
+    assert.expect(1);
+
+    let onClose = false;
+    this.actions.onClose = () => (onClose = true);
+
+    await render(template);
+    await click('.ember-notifier-close-button');
+
+    assert.ok(onClose, 'Close closure action was triggered');
+  });
+
   test('swipe right to close notification', async function (assert) {
     assert.expect(1);
 
