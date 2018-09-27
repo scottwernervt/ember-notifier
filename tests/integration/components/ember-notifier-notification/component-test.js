@@ -103,6 +103,18 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       .hasText('Close', 'Close button has text');
   });
 
+  test('close action trigger', async function (assert) {
+    assert.expect(1);
+
+    let onClose = false;
+    this.actions.onClose = () => (onClose = true);
+
+    await render(template);
+    await click('.ember-notifier-close-button');
+
+    assert.ok(onClose, 'Close closure action was triggered');
+  });
+
   test('#setOption action modifies the notification properties', async function (assert) {
     assert.expect(1);
 
