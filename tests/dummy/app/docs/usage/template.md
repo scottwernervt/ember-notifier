@@ -8,7 +8,8 @@ container displays notifications.
   {{outlet}}
 {{/docs-snippet}}
 
-Inject the `notifier` service anywhere you want to launch a notification.
+Inject the `notifier` service anywhere you want to launch a 
+notification.
 
 {{#docs-snippet name="usage-service.js"}}
   import Component from '@ember/component';
@@ -19,7 +20,7 @@ Inject the `notifier` service anywhere you want to launch a notification.
   });
 {{/docs-snippet}}
 
-Notifications can be added by calling styled functions.
+Notifications can be launched by calling styled functions.
 
 {{#docs-snippet name="usage-styled-functions.js"}}
   this.get('notifier').primary('Primary notification');
@@ -30,13 +31,13 @@ Notifications can be added by calling styled functions.
   this.get('notifier').secondary('Secondary notification');
 {{/docs-snippet}}
 
-Custom notifications can be called using `add()`.
+Custom notifications can be launched using `add()`.
 
 {{#docs-snippet name="usage-add-function.js"}}
   this.get('notifier').add('Custom notification', { type: 'custom-class' });
 {{/docs-snippet}}
 
-All notifications can be cleared using `empty()`.
+All notifications can be closed using `empty()`.
 
 {{#docs-snippet name="empty.js"}}
   this.get('notifier').empty();
