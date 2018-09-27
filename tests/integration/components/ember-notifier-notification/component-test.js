@@ -18,6 +18,7 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       title: 'title',
       message: 'message',
       type: 'is-primary',
+      icon: 'primary-icon',
       showAnimationClass: null,
       hideAnimationClass: null,
       animationTimeout: 0,
@@ -33,7 +34,7 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
   });
 
   test('it renders', async function (assert) {
-    assert.expect(9);
+    assert.expect(10);
 
     await render(template);
 
@@ -49,6 +50,9 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
     assert
       .dom('.ember-notifier-icon')
       .exists();
+    assert
+      .dom('.ember-notifier-icon > span > i')
+      .hasClass('primary-icon', 'Notification has an primary icon class');
     assert
       .dom('.ember-notifier-title')
       .exists();
@@ -103,37 +107,7 @@ module('Integration | Component | ember-notifier-notification', function (hooks)
       .hasText('Close', 'Close button has text');
   });
 
-  test('close action trigger', async function (assert) {
-    assert.expect(1);
 
-    let onClose = false;
-    this.actions.onClose = () => (onClose = true);
-
-    await render(template);
-    await click('.ember-notifier-close-button');
-
-    assert.ok(onClose, 'Close closure action was triggered');
-  });
-
-  test('#setOption action modifies the notification properties', async function (assert) {
-    assert.expect(1);
-
-    this.owner.register('component:message-component', Component.extend({
-      layout: hbs`<button id="update-type" {{action setOption "type" "is-info"}}>Update Type</button>`
-    }));
-
-    this.set('notification', EmberObject.create({
-      type: 'is-primary',
-      contentComponent: 'message-component',
-    }));
-    this.set('close', () => {
-    });
-
-    await render(hbs`{{ember-notifier-notification notification=notification close=(action close)}}`);
-    await click('#update-type');
-
-    assert.equal(this.get('notification.type'), 'is-info');
-  });
 
   test('swipe right to close notification', async function (assert) {
     assert.expect(1);
