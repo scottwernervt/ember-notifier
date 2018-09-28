@@ -8,9 +8,10 @@ module.exports = function(defaults) {
     sassOptions: {
       implementation: sass,
     },
+    // Workaround: Broccoli Builder ran into an error with `UglifyWriter` plugin.
     'ember-cli-uglify': {
       uglify: {
-        compress: false // added this to workaround the issue
+        compress: false,
       }
     },
   });
