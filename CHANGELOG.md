@@ -1,6 +1,6 @@
 # Changelog
 
-## [v0.1.0](https://github.com/scottwernervt/ember-notifier/releases/tag/v0.0.1) (2018-09-27)
+## [v0.1.1](https://github.com/scottwernervt/ember-notifier/releases/tag/v0.0.1) (2018-09-27)
 
 Features:
 
@@ -10,6 +10,10 @@ Features:
 Maintenance:
 
 - Update dependencies and dev dependencies.
+
+## [v0.1.0](https://github.com/scottwernervt/ember-notifier/releases/tag/v0.0.1) (2018-09-27)
+
+Depreciated due to issue with deploying with `ember-cli-addon-docs`.
 
 ## [v0.0.1](https://github.com/scottwernervt/ember-notifier/releases/tag/v0.0.1) (2018-07-30)
 
