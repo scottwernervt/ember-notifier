@@ -81,6 +81,9 @@
     "qunit-dom": "^0.7.1",
     "sass": "^1.14.0"
   },
+  "resolutions": {
+    "uglify-es": "^3.3.9"
+  },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
   },
