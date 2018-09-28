@@ -8,6 +8,11 @@ module.exports = function(defaults) {
     sassOptions: {
       implementation: sass,
     },
+    'ember-cli-uglify': {
+      uglify: {
+        compress: false // added this to workaround the issue
+      }
+    },
   });
 
   /*
