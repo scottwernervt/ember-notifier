@@ -1,14 +1,22 @@
 {
   "v0.0.1": {
-    "path": "v0.0.1",
+    "path": "versions/v0.0.1",
     "name": "v0.0.1",
     "sha": "af59d84d4135d979f1348f742a21a34d6d48a3f8",
-    "tag": "v0.0.1"
+    "tag": "v0.0.1",
+    "oldPath": "v0.0.1"
   },
-  "latest": {
-    "path": "latest",
-    "name": "latest",
+  "-latest": {
+    "path": "",
+    "name": "Latest",
     "sha": "af59d84d4135d979f1348f742a21a34d6d48a3f8",
-    "tag": "v0.0.1"
+    "tag": "v0.0.1",
+    "oldPath": "latest"
+  },
+  "master": {
+    "path": "versions/master",
+    "name": "master",
+    "sha": "47dc3d78ce8be7f743e9fdd212bdd798db1de53d",
+    "tag": null
   }
 }
