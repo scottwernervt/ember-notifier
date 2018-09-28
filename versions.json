@@ -9,14 +9,19 @@
   "-latest": {
     "path": "",
     "name": "Latest",
-    "sha": "af59d84d4135d979f1348f742a21a34d6d48a3f8",
-    "tag": "v0.0.1",
-    "oldPath": "latest"
+    "sha": "90e7369667f43b138af3f03699321cc5fa5d0d93",
+    "tag": "v0.1.1"
   },
   "master": {
     "path": "versions/master",
     "name": "master",
     "sha": "c769b3c95e4827ac2c7a5f9319e54d9f64ef99ae",
     "tag": null
+  },
+  "v0.1.1": {
+    "path": "versions/v0.1.1",
+    "name": "v0.1.1",
+    "sha": "90e7369667f43b138af3f03699321cc5fa5d0d93",
+    "tag": "v0.1.1"
   }
 }
