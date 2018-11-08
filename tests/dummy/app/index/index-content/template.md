@@ -1,3 +1,7 @@
+<aside>
+  Looking for the usage? {{docs-link 'Click here' 'docs.usage'}}.
+</aside>
+
 <div class="docs-flex docs-flex-col">
   <div class="docs-self-center">
     <img src="{{rootUrl}}assets/images/notification-demo.gif" />

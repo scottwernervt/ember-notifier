@@ -1,80 +1,78 @@
-<div class="docs-font-sans docs-text-black docs-leading-normal">
-  {{docs-header}}
+{{docs-header}}
 
-  {{outlet}}
+{{outlet}}
 
-  {{docs-keyboard-shortcuts}}
+{{docs-keyboard-shortcuts}}
 
-  {{!--addon inline --}}
-  {{ember-notifier position=demo.position}}
+{{!--addon inline --}}
+{{ember-notifier position=demo.position}}
 
-  {{!--addon block param --}}
-  {{!--{{#ember-notifier notificationClass='alert' as |notification close|}}--}}
-  {{!--<h5>{{notification.title}}</h5>--}}
-  {{!--<p>{{notification.message}}</p>--}}
-  {{!--<button {{action close}}>Close</button>--}}
-  {{!--{{/ember-notifier}}--}}
+{{!--addon block param --}}
+{{!--{{#ember-notifier notificationClass='alert' as |notification close|}}--}}
+{{!--<h5>{{notification.title}}</h5>--}}
+{{!--<p>{{notification.message}}</p>--}}
+{{!--<button {{action close}}>Close</button>--}}
+{{!--{{/ember-notifier}}--}}
 
-  {{!--bulma--}}
-  {{!--{{#ember-notifier notificationClass='notification' as |notification close|}}--}}
-  {{!--<button class="delete" {{action close}}></button>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
-  {{!--{{/ember-notifier}}--}}
+{{!--bulma--}}
+{{!--{{#ember-notifier notificationClass='notification' as |notification close|}}--}}
+{{!--<button class="delete" {{action close}}></button>--}}
+{{!--{{#if notification.contentComponent}}--}}
+{{!--{{component--}}
+{{!--notification.contentComponent--}}
+{{!--title=notification.title--}}
+{{!--message=notification.message}}--}}
+{{!--{{else}}--}}
+{{!--{{notification.message}}--}}
+{{!--{{/if}}--}}
+{{!--{{/ember-notifier}}--}}
 
-  {{!--spectre--}}
-  {{!--{{#ember-notifier notificationClass="toast" as |notification close|}}--}}
-  {{!--<button class="btn btn-clear float-right" {{action close}}></button>--}}
-  {{!--<h6>{{notification.title}}</h6>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
-  {{!--{{/ember-notifier}}--}}
+{{!--spectre--}}
+{{!--{{#ember-notifier notificationClass="toast" as |notification close|}}--}}
+{{!--<button class="btn btn-clear float-right" {{action close}}></button>--}}
+{{!--<h6>{{notification.title}}</h6>--}}
+{{!--{{#if notification.contentComponent}}--}}
+{{!--{{component--}}
+{{!--notification.contentComponent--}}
+{{!--title=notification.title--}}
+{{!--message=notification.message}}--}}
+{{!--{{else}}--}}
+{{!--{{notification.message}}--}}
+{{!--{{/if}}--}}
+{{!--{{/ember-notifier}}--}}
 
-  {{!--foundation--}}
-  {{!--{{#ember-notifier notificationClass="callout" as |notification close|}}--}}
-  {{!--<h5>{{notification.title}}</h5>--}}
-  {{!--<p>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
-  {{!--</p>--}}
-  {{!--<button class="close-button" aria-label="Dismiss alert" type="button" {{action close}}>--}}
-  {{!--<span aria-hidden="true">&times;</span>--}}
-  {{!--</button>--}}
-  {{!--{{/ember-notifier}}--}}
+{{!--foundation--}}
+{{!--{{#ember-notifier notificationClass="callout" as |notification close|}}--}}
+{{!--<h5>{{notification.title}}</h5>--}}
+{{!--<p>--}}
+{{!--{{#if notification.contentComponent}}--}}
+{{!--{{component--}}
+{{!--notification.contentComponent--}}
+{{!--title=notification.title--}}
+{{!--message=notification.message}}--}}
+{{!--{{else}}--}}
+{{!--{{notification.message}}--}}
+{{!--{{/if}}--}}
+{{!--</p>--}}
+{{!--<button class="close-button" aria-label="Dismiss alert" type="button" {{action close}}>--}}
+{{!--<span aria-hidden="true">&times;</span>--}}
+{{!--</button>--}}
+{{!--{{/ember-notifier}}--}}
 
-  {{!--bootstrap--}}
-  {{!--{{#ember-notifier notificationClass="alert alert-dismissible" as |notification close|}}--}}
-  {{!--<h4 class="alert-heading">{{notification.title}}</h4>--}}
-  {{!--<p>--}}
-  {{!--{{#if notification.contentComponent}}--}}
-  {{!--{{component--}}
-  {{!--notification.contentComponent--}}
-  {{!--title=notification.title--}}
-  {{!--message=notification.message}}--}}
-  {{!--{{else}}--}}
-  {{!--{{notification.message}}--}}
-  {{!--{{/if}}--}}
-  {{!--</p>--}}
-  {{!--<button type="button" class="close" data-dismiss="alert" aria-label="Close" {{action close}}>--}}
-  {{!--<span aria-hidden="true">&times;</span>--}}
-  {{!--</button>--}}
-  {{!--{{/ember-notifier}}--}}
-</div>
+{{!--bootstrap--}}
+{{!--{{#ember-notifier notificationClass="alert alert-dismissible" as |notification close|}}--}}
+{{!--<h4 class="alert-heading">{{notification.title}}</h4>--}}
+{{!--<p>--}}
+{{!--{{#if notification.contentComponent}}--}}
+{{!--{{component--}}
+{{!--notification.contentComponent--}}
+{{!--title=notification.title--}}
+{{!--message=notification.message}}--}}
+{{!--{{else}}--}}
+{{!--{{notification.message}}--}}
+{{!--{{/if}}--}}
+{{!--</p>--}}
+{{!--<button type="button" class="close" data-dismiss="alert" aria-label="Close" {{action close}}>--}}
+{{!--<span aria-hidden="true">&times;</span>--}}
+{{!--</button>--}}
+{{!--{{/ember-notifier}}--}}
