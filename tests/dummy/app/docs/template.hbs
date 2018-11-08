@@ -1,8 +1,6 @@
 {{#docs-viewer as |viewer|}}
-
   {{#viewer.nav as |nav|}}
     {{nav.section "Getting started"}}
-
     {{nav.item "Installation" "docs.index"}}
     {{nav.item "Usage" "docs.usage"}}
     {{nav.item "Demo" "docs.demo"}}
@@ -17,11 +15,6 @@
   {{/viewer.nav}}
 
   {{#viewer.main}}
-    <div class="docs-container">
-      <div class="docs-section">
-        {{outlet}}
-      </div>
-    </div>
+    {{outlet}}
   {{/viewer.main}}
-
 {{/docs-viewer}}
