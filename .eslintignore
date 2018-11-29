@@ -9,6 +9,7 @@ tests/dummy/app/docs/**/snippets/**
 
 # dependencies
 /bower_components/
+/node_modules/
 
 # misc
 /coverage/
