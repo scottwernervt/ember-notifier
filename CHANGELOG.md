@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.1.3](https://github.com/scottwernervt/ember-notifier/releases/tag/v0.1.3) (Unreleased)
+
+Docs:
+
+- Add custom theme to docs.
+
+Maintenance:
+
+- Update dependencies and dev dependencies.
+
 ## [v0.1.2](https://github.com/scottwernervt/ember-notifier/releases/tag/v0.1.2) (2018-11-08)
 
 Maintenance:
