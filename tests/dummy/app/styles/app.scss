@@ -1,1 +1,16 @@
 @import "ember-notifier";
+
+// Brand customization #282
+// https://github.com/ember-learn/ember-cli-addon-docs/issues/282
+.docs-font-title {
+  font-family: serif;
+}
+
+.docs-bg-brand, body {
+  background-color: #AA00AA;
+}
+
+.docs-md__a,
+.docs-text-brand {
+  color: #9b4dca;
+}

@@ -22,7 +22,7 @@ The notification container `position` can be set to:
 
 The global config options can be overridden per notification. Extra 
 options such as `onRemove()` callback function and `contentComponent` 
-can be included. See {{#link-to "docs.api.item" "services/notifier"}}ember-notifier.add(){{/link-to}}
+can be included. See {{#link-to "docs.api.item" "services/notifier" class="docs-md__a"}}ember-notifier.add(){{/link-to}}
 for all notification options.
 
 {{docs-snippet name="notification-options.js" title="component.js"}}
