@@ -6,9 +6,9 @@ export default Component.extend({
 
   classNames: ['docs-border-l-4', 'docs-p-4'],
   classNameBindings: [
-    'isInfo:docs-bg-blue-lightest',
-    'isInfo:docs-border-blue',
-    'isInfo:docs-text-blue-dark',
+    'isInfo:docs-bg-purple-lightest',
+    'isInfo:docs-border-purple',
+    'isInfo:docs-text-purple-dark',
     'isWarning:docs-bg-orange-lightest',
     'isWarning:docs-border-orange',
     'isWarning:docs-text-orange-dark',
