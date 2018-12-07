@@ -30,6 +30,7 @@ $ember-notifier-title-margin: 0 !default;
 $ember-notifier-message-margin: 0 !default;
 
 $ember-notifier-close-width: $ember-notifier-icon-width !default;
+$ember-notifier-close-height: $ember-notifier-icon-width !default;
 $ember-notifier-close-color: $ember-notifier-icon-color !default;
 $ember-notifier-close-opacity: 0.8 !default;
 $ember-notifier-close-hover-opacity: 1 !default;
@@ -55,28 +56,33 @@ $ember-notifier-close-button-size: 1.5rem !default;
     left: 0;
     right: 0;
   }
+
   &.is-top-left {
     top: 0;
     left: 0;
     right: auto;
   }
+
   &.is-top-right {
     top: 0;
     left: auto;
     right: 0;
   }
+
   &.is-bottom {
     bottom: 0;
     left: 0;
     right: 0;
     flex-direction: column-reverse;
   }
+
   &.is-bottom-left {
     bottom: 0;
     left: 0;
     right: auto;
     flex-direction: column-reverse;
   }
+
   &.is-bottom-right {
     bottom: 0;
     left: auto;
@@ -107,6 +113,7 @@ $ember-notifier-close-button-size: 1.5rem !default;
       background-color: $ember-notifier-icon-primary-background-color;
     }
   }
+
   &.is-info {
     background-color: $ember-notifier-info-background-color;
 
@@ -114,6 +121,7 @@ $ember-notifier-close-button-size: 1.5rem !default;
       background-color: $ember-notifier-icon-info-background-color;
     }
   }
+
   &.is-success {
     background-color: $ember-notifier-success-background-color;
 
@@ -121,6 +129,7 @@ $ember-notifier-close-button-size: 1.5rem !default;
       background-color: $ember-notifier-icon-success-background-color;
     }
   }
+
   &.is-warning {
     background-color: $ember-notifier-warning-background-color;
 
@@ -128,6 +137,7 @@ $ember-notifier-close-button-size: 1.5rem !default;
       background-color: $ember-notifier-icon-warning-background-color;
     }
   }
+
   &.is-danger {
     background-color: $ember-notifier-danger-background-color;
 
@@ -135,6 +145,7 @@ $ember-notifier-close-button-size: 1.5rem !default;
       background-color: $ember-notifier-icon-danger-background-color;
     }
   }
+
   &.is-secondary {
     background-color: $ember-notifier-secondary-background-color;
 
@@ -179,20 +190,23 @@ $ember-notifier-close-button-size: 1.5rem !default;
   top: 0;
   right: 0;
   width: $ember-notifier-close-width;
-  height: 100%;
+  text-align: center;
 }
 
 .ember-notifier-close-button {
   position: relative;
+  height: $ember-notifier-close-height;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
+  padding: 0;
   border: none;
   background: transparent;
   color: $ember-notifier-close-color;
   opacity: $ember-notifier-close-opacity;
   font-size: $ember-notifier-close-button-size;
+  text-align: center;
+  justify-content: center;
   cursor: pointer;
 
   &:hover,
