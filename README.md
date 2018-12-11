@@ -87,6 +87,10 @@ for more customization and options.
 Contributing
 ------------------------------------------------------------------------------
 
+### Issues
+
+Demonstrate bug using the provided [ember-twiddle](https://ember-twiddle.com/fc59431098da6a27cac671d0142a6440).
+
 ### Installation
 
 * `git clone https://github.com/scottwernervt/ember-notifier`
