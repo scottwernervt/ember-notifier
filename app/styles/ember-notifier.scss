@@ -31,6 +31,7 @@ $ember-notifier-message-margin: 0 !default;
 
 $ember-notifier-close-button-width: $ember-notifier-icon-width !default;
 $ember-notifier-close-button-height: $ember-notifier-icon-width !default;
+$ember-notifier-close-button-line-height: $ember-notifier-close-button-height !default;
 $ember-notifier-close-button-color: $ember-notifier-icon-color !default;
 $ember-notifier-close-button-opacity: 0.8 !default;
 $ember-notifier-close-button-hover-opacity: 1 !default;
@@ -194,6 +195,7 @@ $ember-notifier-close-button-size: 1.5rem !default;
 
 .ember-notifier-close-button {
   position: relative;
+  margin: 0;
   width: $ember-notifier-close-button-width;
   height: $ember-notifier-close-button-height;
   -moz-appearance: none;
@@ -205,8 +207,8 @@ $ember-notifier-close-button-size: 1.5rem !default;
   color: $ember-notifier-close-button-color;
   opacity: $ember-notifier-close-button-opacity;
   font-size: $ember-notifier-close-button-size;
+  line-height: $ember-notifier-close-button-line-height;
   text-align: center;
-  justify-content: center;
   cursor: pointer;
 
   &:hover,
